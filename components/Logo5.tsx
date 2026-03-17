@@ -103,7 +103,7 @@ export function Cap26Logo5() {
       <span className="flex flex-col justify-center leading-none">
         <span className="relative flex items-start font-semibold tracking-[-0.03em] text-[2rem] -top-[2.5px]">
           <span className="text-white">cap</span>
-          <sup className="relative top-[7px] left-1 text-[0.55em] text-white/72">26</sup>
+          <sup className="relative top-[9px] -left-[2px] text-[12px] text-white/72">26</sup>
         </span>
 
         <span className="-mt-0.5 pl-px text-[0.6rem] font-medium tracking-[0.01em] text-white/72">make better</span>

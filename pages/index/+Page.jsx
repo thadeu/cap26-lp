@@ -3,11 +3,11 @@ import { Config } from 'vike-react/Config'
 import { usePageContext } from 'vike-react/usePageContext'
 import { t } from '../../i18n/index.js'
 import { ConfettiParticles } from '@/components/Confetti'
-import { Cap26Logo } from '@/components/Logo1'
-import { Cap26Logo2 } from '@/components/Logo2'
-import { Cap26Logo3 } from '@/components/Logo3'
-import { Cap26Logo4 } from '@/components/Logo4'
-import { Cap26Logo5 } from '@/components/Logo5'
+// import { Cap26Logo } from '@/components/Logo1'
+// import { Cap26Logo2 } from '@/components/Logo2'
+// import { Cap26Logo3 } from '@/components/Logo3'
+// import { Cap26Logo4 } from '@/components/Logo4'
+// import { Cap26Logo5 } from '@/components/Logo5'
 
 const schema = {
   '@context': 'https://schema.org',
@@ -165,7 +165,7 @@ export default function Page() {
           <div className="wrap header-inner">
             <a className="logo" href={locale === 'pt-BR' ? '/pt-br' : '/'} aria-label="Cap26 home">
               <div className="min-h-auto relative top-2">
-                <Cap26Logo5 />
+                <img src="brand/cap26-lockup-horizontal.svg" width="200px" />
               </div>
             </a>
 
