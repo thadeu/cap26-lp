@@ -393,8 +393,6 @@ export default function Page() {
               <div className="pricing-card">
                 <span className="pricing-badge">{t(locale, 'pricingMonthlyLabel')}</span>
 
-                <h3 className="pricing-name">{t(locale, 'pricingName')}</h3>
-
                 <p className="pricing-desc">{t(locale, 'pricingDesc')}</p>
 
                 <div className="pricing-price">
@@ -461,17 +459,20 @@ export default function Page() {
               {/* Yearly — highlighted */}
               <div className="pricing-card pricing-card--featured">
                 <span className="pricing-badge">{t(locale, 'pricingYearlyLabel')}</span>
-                <h3 className="pricing-name">{t(locale, 'pricingName')}</h3>
-                <p className="pricing-desc">{t(locale, 'pricingDesc')}</p>
+
+                <p className="pricing-desc">{t(locale, 'pricingDesc')} but more cheapest.</p>
+
                 <div className="pricing-price">
                   <span className="pricing-currency">$</span>
                   <span className="pricing-amount">{t(locale, 'pricingYearlyPrice')}</span>
                   <span className="pricing-period">{t(locale, 'pricingYearlyPeriod')}</span>
                 </div>
+
                 <p className="pricing-note">{t(locale, 'pricingYearlyNote')}</p>
                 <a className="pricing-btn pricing-btn--accent" href="#download">
                   {t(locale, 'pricingCta')}
                 </a>
+
                 <ul className="pricing-features">
                   <li>
                     <svg
