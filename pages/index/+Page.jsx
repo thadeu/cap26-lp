@@ -58,6 +58,20 @@ export default function Page() {
     const video = cinemaVideoRef.current
     if (!cinema || !frame || !bg || !cinemaImg || !video) return
 
+    // IntersectionObserver for video play/pause
+    const videoObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {})
+        } else {
+          video.pause()
+        }
+      },
+      { threshold: 0.3 },
+    )
+
+    videoObserver.observe(video)
+
     const onScroll = () => {
       const rect = cinema.getBoundingClientRect()
       const scrollHeight = cinema.offsetHeight - window.innerHeight
@@ -80,20 +94,19 @@ export default function Page() {
 
       if (progress >= 0.03 && progress <= 0.97) {
         header.style.display = 'none'
-
-        if (video.paused) video.play().catch(() => {})
       } else if (progress <= 0.029 || progress >= 1) {
         header.style.opacity = 1
         header.style.display = 'flex'
-
-        if (!video.paused) video.pause()
       }
     }
 
     window.addEventListener('scroll', onScroll, { passive: true })
     onScroll()
 
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      videoObserver.disconnect()
+    }
   }, [])
 
   return (
