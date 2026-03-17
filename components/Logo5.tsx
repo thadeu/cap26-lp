@@ -3,6 +3,7 @@ import { useId } from 'react'
 export function Cap26Logo5() {
   const backgroundId = useId()
   const ringBaseId = useId()
+  const ringGlowId = useId()
   const ringShadowId = useId()
   const holeId = useId()
 
@@ -24,13 +25,17 @@ export function Cap26Logo5() {
             <stop offset="1" stopColor="#07172F" />
           </linearGradient>
           <linearGradient id={ringBaseId} x1="20" y1="18" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="#C56EFF" />
-            <stop offset="0.52" stopColor="#8E4CFF" />
-            <stop offset="1" stopColor="#6A3BDF" />
+            <stop offset="0" stopColor="#FFE29A" />
+            <stop offset="0.4" stopColor="#E5A64A" />
+            <stop offset="1" stopColor="#9B6331" />
+          </linearGradient>
+          <linearGradient id={ringGlowId} x1="23" y1="20" x2="33" y2="29" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="rgba(255,243,214,0.82)" />
+            <stop offset="1" stopColor="rgba(255,255,255,0)" />
           </linearGradient>
           <linearGradient id={ringShadowId} x1="25" y1="24" x2="40" y2="42" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="rgba(42,16,108,0)" />
-            <stop offset="1" stopColor="rgba(42,16,108,0.62)" />
+            <stop offset="0" stopColor="rgba(62,32,12,0)" />
+            <stop offset="1" stopColor="rgba(66,38,20,0.76)" />
           </linearGradient>
           <radialGradient
             id={holeId}
@@ -41,25 +46,27 @@ export function Cap26Logo5() {
             gradientTransform="translate(31.8 32.8) rotate(90) scale(11.6 10.8)"
           >
             <stop offset="0" stopColor="#02060D" />
-            <stop offset="0.78" stopColor="#071425" />
-            <stop offset="1" stopColor="#102845" />
+            <stop offset="0.78" stopColor="#07111D" />
+            <stop offset="1" stopColor="#4B2B1A" />
           </radialGradient>
         </defs>
 
         <rect x="4" y="4" width="56" height="56" rx="17" fill={`url(#${backgroundId})`} />
         <rect x="4.5" y="4.5" width="55" height="55" rx="16.5" stroke="rgba(255,255,255,0.16)" />
 
-        <circle cx="32" cy="32" r="13.2" stroke={`url(#${ringBaseId})`} strokeWidth="8.2" />
+        <circle cx="32" cy="32" r="14.2" stroke={`url(#${ringBaseId})`} strokeWidth="8.2" />
+
         <circle
           cx="32"
           cy="32"
           r="13.2"
-          stroke="rgba(255,255,255,0.24)"
+          stroke={`url(#${ringGlowId})`}
           strokeWidth="2.5"
           strokeDasharray="19 64"
           strokeLinecap="round"
           transform="rotate(-125 32 32)"
         />
+
         <circle
           cx="32"
           cy="32"
@@ -70,15 +77,17 @@ export function Cap26Logo5() {
           strokeLinecap="round"
           transform="rotate(36 32 32)"
         />
+
         <path
           d="M22.8 24.2C25.1 21.9 28.4 20.7 31.8 20.8"
-          stroke="rgba(255,255,255,0.16)"
+          stroke="rgba(255,238,205,0.26)"
           strokeWidth="2.2"
           strokeLinecap="round"
         />
+
         <path
           d="M24.6 40.7C26.8 42.3 29.4 43.1 32.2 43C34.8 42.9 37.2 42 39.2 40.5"
-          stroke="rgba(60,28,150,0.34)"
+          stroke="rgba(116,70,34,0.48)"
           strokeWidth="3.2"
           strokeLinecap="round"
         />
@@ -91,7 +100,9 @@ export function Cap26Logo5() {
 
       <span className="flex items-baseline font-semibold leading-none tracking-[-0.03em] text-[1.35rem] relative -top-[2.8px]">
         <span className="text-white">cap</span>
-        <sup className="pl-1 text-[0.55em] text-white/72">26</sup>
+
+        <sup className="pl-[2.5px] text-[0.55em] text-white/72">26</sup>
+        <sub className="-left-3.25 top-[4.5px] text-[0.55em] text-white/72">better</sub>
       </span>
     </span>
   )
