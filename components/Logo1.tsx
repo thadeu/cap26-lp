@@ -30,7 +30,6 @@ export function Cap26Logo() {
         <rect x="4" y="4" width="56" height="56" rx="17" fill={`url(#${gradientId})`} />
         <rect x="4.5" y="4.5" width="55" height="55" rx="16.5" stroke="rgba(255,255,255,0.16)" />
 
-        <rect x="17" y="17" width="30" height="30" rx="8" fill="rgba(9,27,50,0.52)" />
         <path
           d="M24 24H20.5V28"
           stroke={`url(#${frameId})`}

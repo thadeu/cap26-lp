@@ -57,25 +57,10 @@ export function Cap26Logo4() {
         <circle cx="32" cy="32" r="17" stroke="rgba(255,255,255,0.18)" />
 
         <text
-          x="32"
+          x="31"
           y="39.5"
           textAnchor="middle"
           fill="rgba(255,255,255, 0.9)"
-          fontSize="20"
-          fontWeight="900"
-          letterSpacing="-2"
-          fontFamily="Inter, system-ui, sans-serif"
-        >
-          26
-        </text>
-
-        <text
-          x="32"
-          y="39.5"
-          textAnchor="middle"
-          fill="none"
-          stroke="rgba(200,200,200,0.6)"
-          strokeWidth="0.5"
           fontSize="20"
           fontWeight="900"
           letterSpacing="-2"

@@ -2,9 +2,9 @@ import { useId } from 'react'
 
 export function Cap26Logo5() {
   const backgroundId = useId()
-  const ringAId = useId()
-  const ringBId = useId()
-  const ringCId = useId()
+  const ringBaseId = useId()
+  const ringShadowId = useId()
+  const holeId = useId()
 
   return (
     <span className="inline-flex items-center gap-1 text-white">
@@ -23,41 +23,70 @@ export function Cap26Logo5() {
             <stop offset="0.55" stopColor="#0B2446" />
             <stop offset="1" stopColor="#07172F" />
           </linearGradient>
-          <linearGradient id={ringAId} x1="18" y1="19" x2="35" y2="44" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="#C36CFF" />
-            <stop offset="1" stopColor="#6C42E5" />
+          <linearGradient id={ringBaseId} x1="20" y1="18" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="#C56EFF" />
+            <stop offset="0.52" stopColor="#8E4CFF" />
+            <stop offset="1" stopColor="#6A3BDF" />
           </linearGradient>
-          <linearGradient id={ringBId} x1="27" y1="17" x2="46" y2="41" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="#9E4DFF" />
-            <stop offset="1" stopColor="#4F73FF" />
+          <linearGradient id={ringShadowId} x1="25" y1="24" x2="40" y2="42" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="rgba(42,16,108,0)" />
+            <stop offset="1" stopColor="rgba(42,16,108,0.62)" />
           </linearGradient>
-          <linearGradient id={ringCId} x1="21" y1="28" x2="42" y2="47" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="#62D6FF" />
-            <stop offset="1" stopColor="#43B8C8" />
-          </linearGradient>
+          <radialGradient
+            id={holeId}
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(31.8 32.8) rotate(90) scale(11.6 10.8)"
+          >
+            <stop offset="0" stopColor="#02060D" />
+            <stop offset="0.78" stopColor="#071425" />
+            <stop offset="1" stopColor="#102845" />
+          </radialGradient>
         </defs>
 
         <rect x="4" y="4" width="56" height="56" rx="17" fill={`url(#${backgroundId})`} />
         <rect x="4.5" y="4.5" width="55" height="55" rx="16.5" stroke="rgba(255,255,255,0.16)" />
 
-        <g opacity="0.98">
-          <circle cx="26.5" cy="28.5" r="10.5" stroke={`url(#${ringAId})`} strokeWidth="6.2" />
-          <circle cx="37.5" cy="27.5" r="10.5" stroke={`url(#${ringBId})`} strokeWidth="6.2" />
-          <circle cx="32" cy="37.5" r="10.5" stroke={`url(#${ringCId})`} strokeWidth="6.2" />
-        </g>
+        <circle cx="32" cy="32" r="13.2" stroke={`url(#${ringBaseId})`} strokeWidth="8.2" />
+        <circle
+          cx="32"
+          cy="32"
+          r="13.2"
+          stroke="rgba(255,255,255,0.24)"
+          strokeWidth="2.5"
+          strokeDasharray="19 64"
+          strokeLinecap="round"
+          transform="rotate(-125 32 32)"
+        />
+        <circle
+          cx="32"
+          cy="32"
+          r="13.2"
+          stroke={`url(#${ringShadowId})`}
+          strokeWidth="3.2"
+          strokeDasharray="26 57"
+          strokeLinecap="round"
+          transform="rotate(36 32 32)"
+        />
+        <path
+          d="M22.8 24.2C25.1 21.9 28.4 20.7 31.8 20.8"
+          stroke="rgba(255,255,255,0.16)"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+        />
+        <path
+          d="M24.6 40.7C26.8 42.3 29.4 43.1 32.2 43C34.8 42.9 37.2 42 39.2 40.5"
+          stroke="rgba(60,28,150,0.34)"
+          strokeWidth="3.2"
+          strokeLinecap="round"
+        />
 
-        {/* <text
-          x="32"
-          y="36.9"
-          textAnchor="middle"
-          fill="rgba(255,255,255,0.82)"
-          fontSize="11.5"
-          fontWeight="600"
-          letterSpacing="-0.9"
-          fontFamily="Inter, system-ui, sans-serif"
-        >
-          26
-        </text> */}
+        <path
+          d="M24.6 31.8C24.6 27.76 27.85 24.48 31.87 24.44C36.1 24.4 39.46 27.76 39.42 31.99C39.38 36.15 36.03 39.5 31.87 39.5C27.86 39.5 24.6 36.24 24.6 32.23V31.8Z"
+          fill={`url(#${holeId})`}
+        />
       </svg>
 
       <span className="flex items-baseline font-semibold leading-none tracking-[-0.03em] text-[1.35rem] relative -top-[2.8px]">

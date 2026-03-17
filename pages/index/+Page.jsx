@@ -165,7 +165,7 @@ export default function Page() {
           <div className="wrap header-inner">
             <a className="logo" href={locale === 'pt-BR' ? '/pt-br' : '/'} aria-label="Cap26 home">
               <div className="h-9.5 overflow-clip">
-                <Cap26Logo />
+                <Cap26Logo5 />
               </div>
             </a>
 
