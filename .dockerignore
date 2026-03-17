@@ -1,0 +1,6 @@
+apps/web/.env
+apps/web/.env.local
+apps/hapi/.env
+apps/hapi/.env.local
+apps/rapi/.env
+apps/rapi/.env.local

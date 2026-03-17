@@ -1,8 +1,12 @@
 {
-  "name": "stella-landing",
+  "name": "@stella/lp",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=10"
+  },
   "scripts": {
     "dev": "vike dev",
     "build": "vike build",
@@ -17,7 +21,11 @@
     "vike-react": "^0.6.5"
   },
   "devDependencies": {
+    "@types/node": "^25.3.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "^5.9.3",
     "vite": "^7.1.0"
   }
 }
