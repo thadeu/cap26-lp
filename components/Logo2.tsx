@@ -99,11 +99,9 @@ export function Cap26Logo() {
             <rect x="29" y="44" width="1.5" height="8" rx="0.75" fill="url(#audio-grad)" />
             <rect x="31" y="46" width="1.5" height="8" rx="0.75" fill="url(#audio-grad)" />
             <rect x="33.5" y="44" width="1.5" height="10" rx="0.75" fill="url(#audio-grad)" />
-            <rect x="36" y="46" width="1.5" height="7" rx="0.75" fill="url(#audio-grad)" />
-            <rect x="38" y="44" width="1.5" height="10" rx="0.75" fill="url(#audio-grad)" />
-            <rect x="40.5" y="46" width="1.5" height="8" rx="0.75" fill="url(#audio-grad)" />
-            <rect x="43" y="47" width="1.5" height="5" rx="0.75" fill="url(#audio-grad)" />
-            <rect x="45" y="44" width="1.5" height="10" rx="0.75" fill="url(#audio-grad)" />
+            <rect x="36" y="46" width="1.5" height="7" rx="0.5" fill="url(#audio-grad)" />
+            <rect x="40" y="44" width="1.5" height="10" rx="0.5" fill="url(#audio-grad)" />
+            <rect x="43" y="46" width="1.5" height="8" rx="0.75" fill="url(#audio-grad)" />
           </g>
         </svg>
 
