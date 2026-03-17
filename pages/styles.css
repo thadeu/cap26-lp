@@ -325,6 +325,41 @@ h1 {
   max-width: 720px;
 }
 
+.logo-lab {
+  width: min(100%, 1120px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.logo-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(22, 22, 31, 0.82), rgba(13, 13, 18, 0.78));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.logo-option-kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.logo-option p {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text-soft);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -958,6 +993,11 @@ h1 {
 
   .hero-mobile-image {
     display: block;
+  }
+
+  .logo-lab {
+    grid-template-columns: 1fr;
+    width: min(100%, 420px);
   }
 
   .feature-section {

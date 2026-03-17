@@ -3,8 +3,11 @@ import { Config } from 'vike-react/Config'
 import { usePageContext } from 'vike-react/usePageContext'
 import { t } from '../../i18n/index.js'
 import { ConfettiParticles } from '@/components/Confetti'
-// import { Cap26Logo } from '@/components/Logo1'
-import { Cap26Logo } from '@/components/Logo2'
+import { Cap26Logo } from '@/components/Logo1'
+import { Cap26Logo2 } from '@/components/Logo2'
+import { Cap26Logo3 } from '@/components/Logo3'
+import { Cap26Logo4 } from '@/components/Logo4'
+import { Cap26Logo5 } from '@/components/Logo5'
 
 const schema = {
   '@context': 'https://schema.org',
@@ -199,6 +202,38 @@ export default function Page() {
             <h1>{t(locale, 'heroTitle2')}</h1>
 
             <p className="hero-sub">{t(locale, 'heroSub')}</p>
+
+            <section className="logo-lab" aria-label="Logo variations">
+              <article className="logo-option">
+                <span className="logo-option-kicker">Logo 1</span>
+                <Cap26Logo />
+                <p>Crop frame + rec dot</p>
+              </article>
+
+              <article className="logo-option">
+                <span className="logo-option-kicker">Logo 2</span>
+                <Cap26Logo2 />
+                <p>Capture ring + camera cue</p>
+              </article>
+
+              <article className="logo-option">
+                <span className="logo-option-kicker">Logo 3</span>
+                <Cap26Logo3 />
+                <p>Single window + edit rail</p>
+              </article>
+
+              <article className="logo-option">
+                <span className="logo-option-kicker">Logo 4</span>
+                <Cap26Logo4 />
+                <p>Apple-like orb + large 26</p>
+              </article>
+
+              <article className="logo-option">
+                <span className="logo-option-kicker">Logo 5</span>
+                <Cap26Logo5 />
+                <p>Interlaced rings + hollow center</p>
+              </article>
+            </section>
 
             <div className="hero-actions">
               {isMac && (
