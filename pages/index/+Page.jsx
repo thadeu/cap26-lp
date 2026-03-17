@@ -29,6 +29,7 @@ export default function Page() {
   const year = new Date().getFullYear()
 
   const [isMac, setIsMac] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const uad = navigator.userAgentData
@@ -38,6 +39,14 @@ export default function Page() {
       setIsMac(navigator.userAgent.includes('Macintosh'))
     }
   }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
 
   const heroRef = useRef(null)
   const headerNavRef = useRef(null)
@@ -165,7 +174,7 @@ export default function Page() {
           <div className="wrap header-inner">
             <a className="logo" href={locale === 'pt-BR' ? '/pt-br' : '/'} aria-label="Cap26 home">
               <div className="min-h-auto relative top-2">
-                <img src="brand/cap26-lockup-horizontal.svg" width="200px" />
+                <img src="brand/cap26-lockup-horizontal.svg" width="180px" className="logo-header" />
               </div>
             </a>
 
@@ -185,7 +194,76 @@ export default function Page() {
 
               <a href="mailto:say@cap26.app">Contact</a>
             </nav>
+
+            <button
+              type="button"
+              className={`mobile-menu-toggle ${isMobileMenuOpen ? 'is-open' : ''}`}
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
+              onClick={() => setIsMobileMenuOpen((open) => !open)}
+            >
+              <span className="mobile-menu-toggle-bar" aria-hidden="true" />
+              <span className="mobile-menu-toggle-bar" aria-hidden="true" />
+              <span className="mobile-menu-toggle-bar" aria-hidden="true" />
+            </button>
           </div>
+
+          <div
+            className={`mobile-menu-backdrop ${isMobileMenuOpen ? 'is-open' : ''}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-hidden={!isMobileMenuOpen}
+          />
+
+          <nav
+            id="mobile-menu"
+            className={`mobile-menu-panel ${isMobileMenuOpen ? 'is-open' : ''}`}
+            aria-label="Mobile"
+            aria-hidden={!isMobileMenuOpen}
+          >
+            <a href="#pricing" onClick={() => setIsMobileMenuOpen(false)}>
+              <span className="mobile-menu-link-copy">
+                <span className="mobile-menu-link-title">Pricing</span>
+                <span className="mobile-menu-link-subtitle">more cheap than others</span>
+              </span>
+            </a>
+            <a href="#faq" onClick={() => setIsMobileMenuOpen(false)}>
+              <span className="mobile-menu-link-copy">
+                <span className="mobile-menu-link-title">FAQ</span>
+                <span className="mobile-menu-link-subtitle">you question and we answer</span>
+              </span>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+              <span className="mobile-menu-link-copy">
+                <span className="mobile-menu-link-title">GitHub</span>
+                <span className="mobile-menu-link-subtitle">our opensource repository</span>
+              </span>
+            </a>
+            <a href="mailto:say@cap26.app" onClick={() => setIsMobileMenuOpen(false)}>
+              <span className="mobile-menu-link-copy">
+                <span className="mobile-menu-link-title">Contact</span>
+                <span className="mobile-menu-link-subtitle">send us a message to talk more</span>
+              </span>
+            </a>
+
+            <div className="mobile-menu-ad" aria-label="Annual plan promotion">
+              {/* <img
+                className="mobile-menu-ad-image"
+                src="/screenshot-1.png"
+                alt="Cap26 editor preview"
+                loading="lazy"
+                decoding="async"
+              /> */}
+              <span className="mobile-menu-ad-kicker">Annual deal</span>
+              <strong className="mobile-menu-ad-title">Save more with the yearly plan</strong>
+              <p className="mobile-menu-ad-copy">
+                Pay once, spend less over the year, and get Cap26 ready whenever you need to record.
+              </p>
+              <a className="mobile-menu-ad-cta" href="#pricing" onClick={() => setIsMobileMenuOpen(false)}>
+                See yearly pricing
+              </a>
+            </div>
+          </nav>
         </header>
 
         <main className="hero" ref={heroRef}>
@@ -393,7 +471,7 @@ export default function Page() {
         </section>
 
         {/* ── Showcase scroll ── */}
-        <section className="showcase-section">
+        <section className="showcase-section" id="showcase">
           <div className="wrap">
             <div className="showcase-header">
               <h2>{t(locale, 'showcaseTitle')}</h2>
@@ -420,7 +498,7 @@ export default function Page() {
         </section>
 
         {/* ── Pricing ── */}
-        <section className="pricing-section">
+        <section className="pricing-section" id="pricing">
           <div className="wrap">
             <div className="feature-content text-2xl">
               <h2>{t(locale, 'pricingTitle')}</h2>
@@ -565,7 +643,7 @@ export default function Page() {
         </section>
 
         {/* ── FAQ ── */}
-        <section className="faq-section">
+        <section className="faq-section" id="faq">
           <div className="wrap">
             <div className="feature-content">
               <h2>{t(locale, 'faqTitle')}</h2>
