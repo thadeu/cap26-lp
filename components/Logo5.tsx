@@ -25,19 +25,19 @@ export function Cap26Logo5() {
             <stop offset="1" stopColor="#07172F" />
           </linearGradient>
           <linearGradient id={ringBaseId} x1="20" y1="18" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="#FFE3A3" />
-            <stop offset="0.38" stopColor="#D89B57" />
-            <stop offset="0.72" stopColor="#8B6CFF" />
-            <stop offset="1" stopColor="#6B53C7" />
+            <stop offset="0" stopColor="var(--color-brand-primary-100)" />
+            <stop offset="0.38" stopColor="var(--color-brand-primary-400)" />
+            <stop offset="0.72" stopColor="var(--color-brand-secondary-400)" />
+            <stop offset="1" stopColor="var(--color-brand-secondary-600)" />
           </linearGradient>
           <linearGradient id={ringGlowId} x1="23" y1="20" x2="33" y2="29" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="rgba(255,242,214,0.78)" />
+            <stop offset="0" stopColor="var(--color-brand-highlight)" />
             <stop offset="1" stopColor="rgba(255,255,255,0)" />
           </linearGradient>
           <linearGradient id={ringShadowId} x1="25" y1="24" x2="40" y2="42" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="rgba(62,32,12,0)" />
-            <stop offset="0.58" stopColor="rgba(72,44,28,0.34)" />
-            <stop offset="1" stopColor="rgba(72,56,128,0.78)" />
+            <stop offset="0" stopColor="var(--color-brand-shadow-start)" />
+            <stop offset="0.58" stopColor="var(--color-brand-shadow-mid)" />
+            <stop offset="1" stopColor="var(--color-brand-shadow-end)" />
           </linearGradient>
           <radialGradient
             id={holeId}
@@ -47,9 +47,9 @@ export function Cap26Logo5() {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(31.8 32.8) rotate(90) scale(11.6 10.8)"
           >
-            <stop offset="0" stopColor="#02060D" />
-            <stop offset="0.78" stopColor="#07111D" />
-            <stop offset="1" stopColor="#251A42" />
+            <stop offset="0" stopColor="var(--color-brand-hole-inner)" />
+            <stop offset="0.78" stopColor="var(--color-brand-hole-mid)" />
+            <stop offset="1" stopColor="var(--color-brand-hole-outer)" />
           </radialGradient>
         </defs>
 
@@ -82,14 +82,14 @@ export function Cap26Logo5() {
 
         <path
           d="M22.8 24.2C25.1 21.9 28.4 20.7 31.8 20.8"
-          stroke="rgba(255,238,205,0.26)"
+          stroke="var(--color-brand-highlight-soft)"
           strokeWidth="2.2"
           strokeLinecap="round"
         />
 
         <path
           d="M24.6 40.7C26.8 42.3 29.4 43.1 32.2 43C34.8 42.9 37.2 42 39.2 40.5"
-          stroke="rgba(121,98,201,0.42)"
+          stroke="rgba(121, 98, 201, 0.42)"
           strokeWidth="3.2"
           strokeLinecap="round"
         />
@@ -100,11 +100,13 @@ export function Cap26Logo5() {
         />
       </svg>
 
-      <span className="flex items-baseline font-semibold leading-none tracking-[-0.03em] text-[1.35rem] relative -top-[2.8px]">
-        <span className="text-white">cap</span>
+      <span className="flex flex-col justify-center leading-none">
+        <span className="relative flex items-start font-semibold tracking-[-0.03em] text-[1.35rem] -top-[2.5px]">
+          <span className="text-white">cap</span>
+          <sup className="relative top-[7px] left-1 text-[0.55em] text-white/72">26</sup>
+        </span>
 
-        <sup className="pl-[2.5px] text-[0.55em] text-white/72">26</sup>
-        <sub className="-left-3.25 top-[4.5px] text-[0.55em] text-white/72">better</sub>
+        <span className="-mt-0.5 pl-px text-[0.6rem] font-medium tracking-[0.01em] text-white/72">make better</span>
       </span>
     </span>
   )

@@ -203,7 +203,7 @@ export default function Page() {
 
             <p className="hero-sub">{t(locale, 'heroSub')}</p>
 
-            <section className="logo-lab" aria-label="Logo variations">
+            {/* <section className="logo-lab" aria-label="Logo variations">
               <article className="logo-option">
                 <span className="logo-option-kicker">Logo 1</span>
                 <Cap26Logo />
@@ -233,7 +233,7 @@ export default function Page() {
                 <Cap26Logo5 />
                 <p>Interlaced rings + hollow center</p>
               </article>
-            </section>
+            </section> */}
 
             <div className="hero-actions">
               {isMac && (
