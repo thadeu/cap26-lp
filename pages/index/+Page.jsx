@@ -7,7 +7,7 @@ import { ConfettiParticles } from '@/components/Confetti'
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Capdeck',
+  name: 'Cap26',
   applicationCategory: 'MultimediaApplication',
   operatingSystem: 'macOS',
   description:
@@ -125,7 +125,7 @@ export default function Page() {
       <Config
         title={t(locale, 'seoTitle')}
         description={t(locale, 'seoDescription')}
-        image="/og-stella.svg"
+        image="/og-cap26.svg"
         Head={() => (
           <>
             <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -135,20 +135,20 @@ export default function Page() {
             <meta name="mobile-web-app-capable" content="yes" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-            <meta name="apple-mobile-web-app-title" content="Capdeck" />
+            <meta name="apple-mobile-web-app-title" content="Cap26" />
             <meta name="format-detection" content="telephone=no" />
 
             <meta property="og:type" content="website" />
             <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'pt_BR'} />
-            <meta property="og:site_name" content="Capdeck" />
+            <meta property="og:site_name" content="Cap26" />
 
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Capdeck for macOS" />
+            <meta name="twitter:title" content="Cap26 for macOS" />
             <meta name="twitter:description" content={t(locale, 'twitterDescription')} />
 
-            <link rel="alternate" hrefLang="en" href="https://capdeck.app/" />
-            <link rel="alternate" hrefLang="pt-BR" href="https://capdeck.app/pt-br" />
-            <link rel="alternate" hrefLang="x-default" href="https://capdeck.app/" />
+            <link rel="alternate" hrefLang="en" href="https://cap26.app/" />
+            <link rel="alternate" hrefLang="pt-BR" href="https://cap26.app/pt-br" />
+            <link rel="alternate" hrefLang="x-default" href="https://cap26.app/" />
 
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
           </>
@@ -158,8 +158,8 @@ export default function Page() {
       <div className="site">
         <header className="header" ref={headerNavRef}>
           <div className="wrap header-inner">
-            <a className="logo" href={locale === 'pt-BR' ? '/pt-br' : '/'} aria-label="Capdeck home">
-              <span className="logo-text logo-glow">Capdeck</span>
+            <a className="logo" href={locale === 'pt-BR' ? '/pt-br' : '/'} aria-label="Cap26 home">
+              <span className="logo-text logo-glow">Cap26</span>
             </a>
 
             <nav className="nav" aria-label="Primary">
@@ -176,7 +176,7 @@ export default function Page() {
                 <span className="pl-2">Github</span>
               </a>
 
-              <a href="mailto:say@capdeck.app">Contact</a>
+              <a href="mailto:say@cap26.app">Contact</a>
             </nav>
           </div>
         </header>
@@ -591,7 +591,7 @@ export default function Page() {
           <div className="wrap footer-grid">
             <div className="footer-brand">
               <div className="footer-logo">
-                <span className="logo-text">Capdeck</span>
+                <span className="logo-text">Cap26</span>
               </div>
 
               <p>{t(locale, 'footerDesc')}</p>
@@ -603,7 +603,7 @@ export default function Page() {
               <h4>{t(locale, 'footerProduct')}</h4>
 
               <a href="#download">{t(locale, 'footerDownload')}</a>
-              <a href="mailto:say@capdeck.app">{t(locale, 'footerContact')}</a>
+              <a href="mailto:say@cap26.app">{t(locale, 'footerContact')}</a>
             </div>
 
             <div className="footer-col">

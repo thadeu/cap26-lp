@@ -37,7 +37,7 @@ const translations = {
 
     // Showcase
     showcaseTitle: 'Tem mais',
-    showcaseSub: 'Capdeck é repleto de recursos úteis, mantendo tudo fácil de usar.',
+    showcaseSub: 'Cap26 é repleto de recursos úteis, mantendo tudo fácil de usar.',
     showcaseItem1Title: 'Zoom automático',
     showcaseItem1Desc: 'Foco automático na ação principal. Perfeito para tutoriais e demos.',
     showcaseItem2Title: 'Cursor suave',
@@ -50,11 +50,11 @@ const translations = {
     showcaseItem6Desc: 'Seu rosto aparece sobre a gravação com zoom inteligente para não cobrir o cursor.',
 
     // Pricing
-    pricingSub: 'Eleve seus tutoriais, demos de produto e colaboração com Capdeck.',
+    pricingSub: 'Eleve seus tutoriais, demos de produto e colaboração com Cap26.',
     pricingMonthlyLabel: 'Mensal',
     pricingYearlyLabel: 'Anual',
-    pricingName: 'Capdeck',
-    pricingDesc: 'Todos os recursos do Capdeck inclusos.',
+    pricingName: 'Cap26',
+    pricingDesc: 'Todos os recursos do Cap26 inclusos.',
     pricingMonthlyPrice: '29',
     pricingMonthlyPeriod: '/ mês',
     pricingMonthlyNote: 'Cobrado mensalmente. Mude para anual quando quiser.',
@@ -62,35 +62,35 @@ const translations = {
     pricingYearlyPeriod: '/ mês',
     pricingYearlyNote: 'Cobrado anualmente.',
     pricingCta: 'Começar',
-    pricingFeature1: 'Todos os recursos do Capdeck',
+    pricingFeature1: 'Todos os recursos do Cap26',
     pricingFeature2: 'Links compartilháveis',
     pricingFeature3: '3 dispositivos macOS pessoais',
 
     // FAQ
     faqTitle: 'Perguntas & Respostas',
     faqSub: 'Se tiver outras dúvidas, entre em contato.',
-    faqQ1: 'Como Capdeck é diferente de outros screen recorders?',
+    faqQ1: 'Como Cap26 é diferente de outros screen recorders?',
     faqA1:
-      'Capdeck grava sua tela e aplica efeitos automaticamente — zoom, cursor suave, legendas e backgrounds. Tudo em um único fluxo, sem precisar de outro editor.',
-    faqQ2: 'Capdeck é gratuito?',
+      'Cap26 grava sua tela e aplica efeitos automaticamente — zoom, cursor suave, legendas e backgrounds. Tudo em um único fluxo, sem precisar de outro editor.',
+    faqQ2: 'Cap26 é gratuito?',
     faqA2:
-      'Capdeck tem um plano gratuito com recursos essenciais. Para recursos avançados como exportação em 4K, legendas automáticas e links compartilháveis, confira nossos planos.',
+      'Cap26 tem um plano gratuito com recursos essenciais. Para recursos avançados como exportação em 4K, legendas automáticas e links compartilháveis, confira nossos planos.',
     faqQ3: 'Qual versão do macOS é necessária?',
-    faqA3: 'Capdeck requer macOS 12 (Monterey) ou superior. Recomendamos macOS 14+ para melhor desempenho.',
-    faqQ4: 'Posso usar Capdeck para criar conteúdo profissional?',
+    faqA3: 'Cap26 requer macOS 12 (Monterey) ou superior. Recomendamos macOS 14+ para melhor desempenho.',
+    faqQ4: 'Posso usar Cap26 para criar conteúdo profissional?',
     faqA4:
-      'Sim! Capdeck foi projetado para demos de produto, tutoriais, cursos e conteúdo para redes sociais. Animações automáticas de zoom e cursor dão um acabamento profissional a qualquer gravação.',
+      'Sim! Cap26 foi projetado para demos de produto, tutoriais, cursos e conteúdo para redes sociais. Animações automáticas de zoom e cursor dão um acabamento profissional a qualquer gravação.',
     faqQ5: 'Meus dados são seguros?',
     faqA5:
       'Absolutamente. Todo o processamento acontece localmente no seu Mac. Nenhum vídeo é enviado para nossos servidores — sua privacidade é nossa prioridade.',
 
     // CTA
     ctaTitle: 'Pronto para gravar?',
-    ctaSub: 'Baixe Capdeck gratuitamente e comece a criar vídeos incríveis.',
+    ctaSub: 'Baixe Cap26 gratuitamente e comece a criar vídeos incríveis.',
 
     // Footer
     footerDesc: 'Screen recording studio para macOS.',
-    footerCopyright: '© {year} Capdeck. Todos os direitos reservados.',
+    footerCopyright: '© {year} Cap26. Todos os direitos reservados.',
     footerProduct: 'Produto',
     footerDownload: 'Download',
     footerContact: 'Contato',
@@ -101,11 +101,11 @@ const translations = {
     footerTerms: 'Termos',
 
     // SEO
-    seoTitle: 'Capdeck for macOS | Screen Recording com editor completo',
+    seoTitle: 'Cap26 for macOS | Screen Recording com editor completo',
     seoDescription:
-      'Capdeck, o screen recording studio para macOS: editor completo, cortes, efeitos, microfone, webcam, video, legendas e background em um fluxo unificado.',
+      'Cap26, o screen recording studio para macOS: editor completo, cortes, efeitos, microfone, webcam, video, legendas e background em um fluxo unificado.',
     twitterDescription: 'One studio. All your recordings. Feito para macOS.',
-    imgAlt: 'Capdeck app — interface do screen recording studio',
+    imgAlt: 'Cap26 app — interface do screen recording studio',
 
     pricingTitle: 'Preços',
   },
@@ -147,7 +147,7 @@ const translations = {
 
     // Showcase
     showcaseTitle: 'Feature for Creators',
-    showcaseSub: 'Capdeck is packed with useful features while keeping everything easy to use.',
+    showcaseSub: 'Cap26 is packed with useful features while keeping everything easy to use.',
     showcaseItem1Title: 'Automatic zoom',
     showcaseItem1Desc: 'Auto-focus on the main action. Perfect for tutorials and demos.',
     showcaseItem2Title: 'Smooth cursor',
@@ -161,11 +161,11 @@ const translations = {
 
     // Pricing
     pricingTitle: 'Pricing',
-    pricingSub: 'Level up your tutorials, product demos, and collaboration with Capdeck.',
+    pricingSub: 'Level up your tutorials, product demos, and collaboration with Cap26.',
     pricingMonthlyLabel: 'Monthly',
     pricingYearlyLabel: 'Yearly',
-    pricingName: 'Capdeck',
-    pricingDesc: 'All Capdeck features included.',
+    pricingName: 'Cap26',
+    pricingDesc: 'All Cap26 features included.',
     pricingMonthlyPrice: '29',
     pricingMonthlyPeriod: '/ month',
     pricingMonthlyNote: 'Per month billed monthly. Switch to yearly anytime.',
@@ -173,35 +173,35 @@ const translations = {
     pricingYearlyPeriod: '/ month',
     pricingYearlyNote: 'Per month billed yearly.',
     pricingCta: 'Get Started',
-    pricingFeature1: 'All Capdeck features',
+    pricingFeature1: 'All Cap26 features',
     pricingFeature2: 'Shareable links',
     pricingFeature3: '3 personal macOS devices',
 
     // FAQ
     faqTitle: 'Questions & Answers',
     faqSub: 'If you have any other questions, please get in touch.',
-    faqQ1: 'How is Capdeck different from other screen recording apps?',
+    faqQ1: 'How is Cap26 different from other screen recording apps?',
     faqA1:
-      'Capdeck records your screen and automatically applies effects — zoom, smooth cursor, captions and backgrounds. Everything in a single workflow, no separate editor needed.',
-    faqQ2: 'Is Capdeck free?',
+      'Cap26 records your screen and automatically applies effects — zoom, smooth cursor, captions and backgrounds. Everything in a single workflow, no separate editor needed.',
+    faqQ2: 'Is Cap26 free?',
     faqA2:
-      'Capdeck has a free plan with essential features. For advanced features like 4K export, automatic captions and shareable links, check out our plans.',
+      'Cap26 has a free plan with essential features. For advanced features like 4K export, automatic captions and shareable links, check out our plans.',
     faqQ3: 'What macOS version is required?',
-    faqA3: 'Capdeck requires macOS 12 (Monterey) or later. We recommend macOS 14+ for the best performance.',
-    faqQ4: 'Can I use Capdeck to create professional content?',
+    faqA3: 'Cap26 requires macOS 12 (Monterey) or later. We recommend macOS 14+ for the best performance.',
+    faqQ4: 'Can I use Cap26 to create professional content?',
     faqA4:
-      'Yes! Capdeck is designed for product demos, tutorials, courses and social media content. Automatic zoom and cursor animations give any recording a professional finish.',
+      'Yes! Cap26 is designed for product demos, tutorials, courses and social media content. Automatic zoom and cursor animations give any recording a professional finish.',
     faqQ5: 'Is my data secure?',
     faqA5:
       'Absolutely. All processing happens locally on your Mac. No videos are sent to our servers — your privacy is our priority.',
 
     // CTA
     ctaTitle: 'Ready to record?',
-    ctaSub: 'Download Capdeck for free and start creating stunning videos.',
+    ctaSub: 'Download Cap26 for free and start creating stunning videos.',
 
     // Footer
     footerDesc: 'Screen recording studio for macOS.',
-    footerCopyright: '© {year} Capdeck. All rights reserved.',
+    footerCopyright: '© {year} Cap26. All rights reserved.',
     footerProduct: 'Product',
     footerDownload: 'Download',
     footerContact: 'Contact',
@@ -212,11 +212,11 @@ const translations = {
     footerTerms: 'Terms',
 
     // SEO
-    seoTitle: 'Capdeck for macOS | Screen Recording with full editor',
+    seoTitle: 'Cap26 for macOS | Screen Recording with full editor',
     seoDescription:
-      'Capdeck, the screen recording studio for macOS: full editor, cuts, effects, mic, webcam, video, captions and backgrounds in a unified workflow.',
+      'Cap26, the screen recording studio for macOS: full editor, cuts, effects, mic, webcam, video, captions and backgrounds in a unified workflow.',
     twitterDescription: 'One studio. All your recordings. Built for macOS.',
-    imgAlt: 'Capdeck app — screen recording studio interface',
+    imgAlt: 'Cap26 app — screen recording studio interface',
   },
 }
 

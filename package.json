@@ -1,5 +1,5 @@
 {
-  "name": "@capdeck/lp",
+  "name": "@cap26/lp",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -11,7 +11,7 @@
     "dev": "vike dev",
     "build": "vike build",
     "preview": "vike preview",
-    "ship": "pnpm build && wrangler pages deploy dist/client --project-name capdeck-lp"
+    "ship": "pnpm build && wrangler pages deploy dist/client --project-name cap26-lp"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
