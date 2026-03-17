@@ -7,8 +7,8 @@ const translations = {
 
     // Hero
     badgeText: 'Alpha v0.1.0',
-    heroTitle1: 'One Studio.',
-    heroTitle2: 'All Your Recordings.',
+    heroTitle1: 'Um Studio.',
+    heroTitle2: 'Grave e edite num só lugar.',
     heroSub:
       'Unifique gravação e edição em uma experiência só. Feito para criadores, times de produto e pessoas dolorosamente desorganizadas com vídeos.',
     btnDownload: 'Download para macOS',
@@ -57,10 +57,10 @@ const translations = {
     pricingYearlyLabel: 'Anual',
     pricingName: 'Cap26',
     pricingDesc: 'Todos os recursos inclusos.',
-    pricingMonthlyPrice: '50',
+    pricingMonthlyPrice: '9.26',
     pricingMonthlyPeriod: '/ mês',
     pricingMonthlyNote: 'Cobrado mensalmente. Mude para anual quando quiser.',
-    pricingYearlyPrice: '30',
+    pricingYearlyPrice: '7.26',
     pricingYearlyPeriod: '/ mês',
     pricingYearlyNote: 'Cobrado anualmente.',
     pricingCta: 'Começar',
@@ -78,7 +78,7 @@ const translations = {
     faqA2:
       'Cap26 tem um plano gratuito com recursos essenciais. Para recursos avançados como exportação em 4K, legendas automáticas e links compartilháveis, confira nossos planos.',
     faqQ3: 'Qual versão do macOS é necessária?',
-    faqA3: 'Cap26 requer macOS 12 (Monterey) ou superior. Recomendamos macOS 14+ para melhor desempenho.',
+    faqA3: 'Cap26 requer macOS 12 (Monterey) ou superior. Recomendamos macOS 13+ para melhor desempenho.',
     faqQ4: 'Posso usar Cap26 para criar conteúdo profissional?',
     faqA4:
       'Sim! Cap26 foi projetado para demos de produto, tutoriais, cursos e conteúdo para redes sociais. Animações automáticas de zoom e cursor dão um acabamento profissional a qualquer gravação.',
@@ -92,7 +92,7 @@ const translations = {
 
     // Footer
     footerDesc: 'Screen recording studio para macOS.',
-    footerCopyright: '© {year} Cap26. Todos os direitos reservados.',
+    footerCopyright: '© {year} cap26. Todos os direitos reservados.',
     footerProduct: 'Produto',
     footerDownload: 'Download',
     footerContact: 'Contato',
@@ -123,7 +123,7 @@ const translations = {
       'Unify recording and editing in a single experience. Built for creators, product teams, and people painfully disorganized with videos.',
     btnDownload: 'Download for macOS',
     btnGithub: 'Star on GitHub',
-    heroMeta: 'Alpha v0.1.0 · macOS 12+',
+    heroMeta: 'Alpha v0.1.0 · macOS 13+',
 
     // Section: Recording
     sectionRecordingLabel: 'Recording',
@@ -203,7 +203,7 @@ const translations = {
 
     // Footer
     footerDesc: 'Screen recording studio for macOS.',
-    footerCopyright: '© {year} Cap26. All rights reserved.',
+    footerCopyright: '© {year} Ccp26. All rights reserved.',
     footerProduct: 'Product',
     footerDownload: 'Download',
     footerContact: 'Contact',
