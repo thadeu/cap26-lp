@@ -935,7 +935,7 @@ h1 {
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   .wrap {
-    width: min(calc(100% - 32px), var(--wrap));
+    width: min(calc(100% - 48px), var(--wrap));
   }
 
   .header-inner {
@@ -1014,6 +1014,10 @@ h1 {
     height: 44px;
     padding: 0 20px;
     font-size: 0.875rem;
+  }
+
+  .btn.primary {
+    display: none;
   }
 }
 
