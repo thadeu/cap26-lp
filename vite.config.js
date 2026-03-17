@@ -1,6 +1,7 @@
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 import vike from 'vike/plugin'
 
 export default {
-  plugins: [react(), vike()],
+  plugins: [tailwindcss(), react(), vike()],
 }
