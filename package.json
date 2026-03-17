@@ -1,5 +1,5 @@
 {
-  "name": "@stella/lp",
+  "name": "@capdeck/lp",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "vike dev",
     "build": "vike build",
-    "preview": "vike preview"
+    "preview": "vike preview",
+    "deploy": "pnpm build && wrangler pages deploy dist/client --project-name capdeck-landing"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",

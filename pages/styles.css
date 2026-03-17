@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* ─── Design Tokens — aligned with Stella Desktop ─── */
+/* ─── Design Tokens — aligned with Desktop ─── */
 :root {
   color-scheme: dark;
 
@@ -140,13 +140,13 @@ img {
   font-size: 2rem;
 }
 
-/* ─── Stella Brand Glow ─── */
+/* ─── Brand Glow ─── */
 .logo-glow {
   filter: drop-shadow(0 0 6px rgba(139, 108, 255, 0.5)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.25));
-  animation: stellaGlowPulse 2.5s ease-in-out infinite;
+  animation: glowPulse 2.5s ease-in-out infinite;
 }
 
-@keyframes stellaGlowPulse {
+@keyframes glowPulse {
   0%,
   100% {
     filter: drop-shadow(0 0 6px rgba(139, 108, 255, 0.5)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.25));
