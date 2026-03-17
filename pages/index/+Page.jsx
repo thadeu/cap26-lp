@@ -164,7 +164,7 @@ export default function Page() {
         <header className="header" ref={headerNavRef}>
           <div className="wrap header-inner">
             <a className="logo" href={locale === 'pt-BR' ? '/pt-br' : '/'} aria-label="Cap26 home">
-              <div className="h-15">
+              <div className="min-h-auto relative top-2">
                 <Cap26Logo5 />
               </div>
             </a>
