@@ -70,6 +70,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+
+  overflow-x: hidden;
 }
 
 body {
@@ -78,6 +80,8 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
 }
 
 a {
@@ -1265,11 +1269,12 @@ h1 {
 }
 
 /* ─── Responsive ─── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   html,
   body,
   * {
     scrollbar-width: none;
+    -webkit-scrollbar-width: none;
     -ms-overflow-style: none;
   }
 
