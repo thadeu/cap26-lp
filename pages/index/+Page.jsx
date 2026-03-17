@@ -747,8 +747,6 @@ export default function Page() {
               <a href="https://github.com/thadeu/cap26" target="_blank" rel="noreferrer">
                 GitHub
               </a>
-
-              <span>{t(locale, 'footerApiSoon')}</span>
             </div>
 
             <div className="footer-col">
