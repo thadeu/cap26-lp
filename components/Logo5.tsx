@@ -25,17 +25,19 @@ export function Cap26Logo5() {
             <stop offset="1" stopColor="#07172F" />
           </linearGradient>
           <linearGradient id={ringBaseId} x1="20" y1="18" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="#FFE29A" />
-            <stop offset="0.4" stopColor="#E5A64A" />
-            <stop offset="1" stopColor="#9B6331" />
+            <stop offset="0" stopColor="#FFE3A3" />
+            <stop offset="0.38" stopColor="#D89B57" />
+            <stop offset="0.72" stopColor="#8B6CFF" />
+            <stop offset="1" stopColor="#6B53C7" />
           </linearGradient>
           <linearGradient id={ringGlowId} x1="23" y1="20" x2="33" y2="29" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="rgba(255,243,214,0.82)" />
+            <stop offset="0" stopColor="rgba(255,242,214,0.78)" />
             <stop offset="1" stopColor="rgba(255,255,255,0)" />
           </linearGradient>
           <linearGradient id={ringShadowId} x1="25" y1="24" x2="40" y2="42" gradientUnits="userSpaceOnUse">
             <stop offset="0" stopColor="rgba(62,32,12,0)" />
-            <stop offset="1" stopColor="rgba(66,38,20,0.76)" />
+            <stop offset="0.58" stopColor="rgba(72,44,28,0.34)" />
+            <stop offset="1" stopColor="rgba(72,56,128,0.78)" />
           </linearGradient>
           <radialGradient
             id={holeId}
@@ -47,7 +49,7 @@ export function Cap26Logo5() {
           >
             <stop offset="0" stopColor="#02060D" />
             <stop offset="0.78" stopColor="#07111D" />
-            <stop offset="1" stopColor="#4B2B1A" />
+            <stop offset="1" stopColor="#251A42" />
           </radialGradient>
         </defs>
 
@@ -87,7 +89,7 @@ export function Cap26Logo5() {
 
         <path
           d="M24.6 40.7C26.8 42.3 29.4 43.1 32.2 43C34.8 42.9 37.2 42 39.2 40.5"
-          stroke="rgba(116,70,34,0.48)"
+          stroke="rgba(121,98,201,0.42)"
           strokeWidth="3.2"
           strokeLinecap="round"
         />
