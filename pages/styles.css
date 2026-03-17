@@ -383,6 +383,18 @@ h1 {
 
 /* (hero image now lives inside .scroll-cinema) */
 
+/* ─── Hero Mobile Image (fallback when cinema is hidden) ─── */
+.hero-mobile-image {
+  display: none;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.3),
+    0 16px 60px rgba(0, 0, 0, 0.4);
+  margin-top: 40px;
+}
+
 /* ─── Scroll Cinema — macOS grow effect ─── */
 .scroll-cinema {
   position: relative;
@@ -941,11 +953,11 @@ h1 {
   }
 
   .scroll-cinema {
-    height: 200vh;
+    display: none;
   }
 
-  .scroll-cinema-app {
-    width: 92%;
+  .hero-mobile-image {
+    display: block;
   }
 
   .feature-section {

@@ -117,17 +117,28 @@ export default function Page() {
         image="/og-stella.svg"
         Head={() => (
           <>
+            <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
             <meta name="robots" content="index,follow" />
             <meta name="theme-color" content="#0d0d12" />
+            <meta name="theme-color" content="#0d0d12" media="(prefers-color-scheme: dark)" />
+            <meta name="mobile-web-app-capable" content="yes" />
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+            <meta name="apple-mobile-web-app-title" content="Capdeck" />
+            <meta name="format-detection" content="telephone=no" />
+
             <meta property="og:type" content="website" />
             <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'pt_BR'} />
             <meta property="og:site_name" content="Capdeck" />
+
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content="Capdeck for macOS" />
             <meta name="twitter:description" content={t(locale, 'twitterDescription')} />
+
             <link rel="alternate" hrefLang="en" href="https://capdeck.app/" />
             <link rel="alternate" hrefLang="pt-BR" href="https://capdeck.app/pt-br" />
             <link rel="alternate" hrefLang="x-default" href="https://capdeck.app/" />
+
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
           </>
         )}
@@ -191,6 +202,15 @@ export default function Page() {
             </div>
 
             <span className="hero-meta">{t(locale, 'heroMeta')}</span>
+
+            <img
+              className="hero-mobile-image"
+              src="/screenshot-1.png"
+              alt={t(locale, 'imgAlt')}
+              width="1280"
+              height="800"
+              loading="lazy"
+            />
           </div>
         </main>
 
