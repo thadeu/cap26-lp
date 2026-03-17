@@ -1,3 +1,5 @@
+import { localeDefault, type Locale } from './locales'
+
 const translations = {
   'pt-BR': {
     // Nav
@@ -218,8 +220,10 @@ const translations = {
     twitterDescription: 'One studio. All your recordings. Built for macOS.',
     imgAlt: 'Cap26 app — screen recording studio interface',
   },
-}
+} satisfies Record<Locale, Record<string, string>>
 
-export function t(locale, key) {
-  return translations[locale]?.[key] ?? translations['en'][key] ?? key
+export function t(locale: string, key: string): string {
+  const normalizedLocale = locale in translations ? (locale as Locale) : localeDefault
+
+  return translations[normalizedLocale][key] ?? translations[localeDefault][key] ?? key
 }

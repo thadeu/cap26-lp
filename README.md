@@ -114,7 +114,7 @@ The site currently ships with:
 - English (`en`)
 - Brazilian Portuguese (`pt-BR`)
 
-Translations live in `i18n/translations.js`.
+Translations live in `i18n/translations.ts`.
 
 ## License
 

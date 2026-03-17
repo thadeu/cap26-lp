@@ -1,9 +1,16 @@
 export { onBeforeRoute }
 
-import { extractLocale } from '../i18n/index.js'
+import { extractLocale } from '@/i18n'
 import { modifyUrl } from 'vike/modifyUrl'
 
-function onBeforeRoute(pageContext) {
+type OnBeforeRoutePageContext = {
+  urlParsed: {
+    href: string
+    pathname: string
+  }
+}
+
+function onBeforeRoute(pageContext: OnBeforeRoutePageContext) {
   const { pathname } = pageContext.urlParsed
   const { locale, urlPathnameWithoutLocale } = extractLocale(pathname)
   const urlLogical = modifyUrl(pageContext.urlParsed.href, {

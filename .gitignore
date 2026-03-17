@@ -19,3 +19,5 @@ node_modules
 *.pid
 *.seed
 *.pid.lock
+.wrangler
+.claude/*.local.json

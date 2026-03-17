@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState } from 'react'
 import { Config } from 'vike-react/Config'
 import { usePageContext } from 'vike-react/usePageContext'
-import { t } from '../../i18n/index.js'
+import { t } from '@/i18n'
 import { ConfettiParticles } from '@/components/Confetti'
-// import { Cap26Logo } from '@/components/Logo1'
-// import { Cap26Logo2 } from '@/components/Logo2'
-// import { Cap26Logo3 } from '@/components/Logo3'
-// import { Cap26Logo4 } from '@/components/Logo4'
-// import { Cap26Logo5 } from '@/components/Logo5'
+
+type UserAgentData = {
+  getHighEntropyValues: (values: string[]) => Promise<{ platform?: string }>
+}
+
+type NavigatorWithUserAgentData = Navigator & {
+  userAgentData?: UserAgentData
+}
 
 const schema = {
   '@context': 'https://schema.org',
@@ -25,14 +28,15 @@ const schema = {
 }
 
 export default function Page() {
-  const { locale } = usePageContext()
+  const pageContext = usePageContext()
+  const locale = 'locale' in pageContext && typeof pageContext.locale === 'string' ? pageContext.locale : 'en'
   const year = new Date().getFullYear()
 
   const [isMac, setIsMac] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    const uad = navigator.userAgentData
+    const uad = (navigator as NavigatorWithUserAgentData).userAgentData
     if (uad) {
       uad.getHighEntropyValues(['platform']).then((v) => setIsMac(v.platform === 'macOS'))
     } else {
@@ -48,17 +52,17 @@ export default function Page() {
     }
   }, [isMobileMenuOpen])
 
-  const heroRef = useRef(null)
-  const headerNavRef = useRef(null)
-  const cinemaRef = useRef(null)
-  const cinemaFrameRef = useRef(null)
-  const cinemaBgRef = useRef(null)
-  const cinemaImgRef = useRef(null)
-  const cinemaVideoRef = useRef(null)
+  const heroRef = useRef<HTMLElement | null>(null)
+  const headerNavRef = useRef<HTMLElement | null>(null)
+  const cinemaRef = useRef<HTMLElement | null>(null)
+  const cinemaFrameRef = useRef<HTMLDivElement | null>(null)
+  const cinemaBgRef = useRef<HTMLImageElement | null>(null)
+  const cinemaImgRef = useRef<HTMLImageElement | null>(null)
+  const cinemaVideoRef = useRef<HTMLVideoElement | null>(null)
 
   useEffect(() => {
-    const confetti = heroRef.current?.querySelector('.hero-confetti')
-    const header = document.querySelector('.header')
+    const confetti = heroRef.current?.querySelector<HTMLElement>('.hero-confetti')
+    const header = document.querySelector<HTMLElement>('.header')
 
     if (!confetti || !header) return
 
@@ -81,7 +85,7 @@ export default function Page() {
     const header = headerNavRef.current
 
     const video = cinemaVideoRef.current
-    if (!cinema || !frame || !bg || !cinemaImg || !video) return
+    if (!cinema || !frame || !bg || !cinemaImg || !video || !header) return
 
     // IntersectionObserver for video play/pause
     const videoObserver = new IntersectionObserver(
@@ -108,19 +112,19 @@ export default function Page() {
 
       // Screenshot fades out, video fades in at same position/scale
       cinemaImg.style.transform = `translate(-50%, -50%) scale(${appScale})`
-      cinemaImg.style.opacity = 1 - progress
+      cinemaImg.style.opacity = `${1 - progress}`
 
       video.style.transform = `translate(-50%, -50%) scale(${appScale})`
-      video.style.opacity = progress
+      video.style.opacity = `${progress}`
 
-      bg.style.opacity = progress
+      bg.style.opacity = `${progress}`
 
-      header.style.opacity = 1 - progress
+      header.style.opacity = `${1 - progress}`
 
       if (progress >= 0.03 && progress <= 0.97) {
         header.style.display = 'none'
       } else if (progress <= 0.029 || progress >= 1) {
-        header.style.opacity = 1
+        header.style.opacity = '1'
         header.style.display = 'flex'
       }
     }
@@ -140,7 +144,7 @@ export default function Page() {
         title={t(locale, 'seoTitle')}
         description={t(locale, 'seoDescription')}
         image="/og-cap26.svg"
-        Head={() => (
+        Head={
           <>
             <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
             <meta name="robots" content="index,follow" />
@@ -166,7 +170,7 @@ export default function Page() {
 
             <script type="application/ld+json">{JSON.stringify(schema)}</script>
           </>
-        )}
+        }
       />
 
       <div className="site">
@@ -252,13 +256,6 @@ export default function Page() {
             </a>
 
             <div className="mobile-menu-ad" aria-label="Annual plan promotion">
-              {/* <img
-                className="mobile-menu-ad-image"
-                src="/screenshot-1.png"
-                alt="Cap26 editor preview"
-                loading="lazy"
-                decoding="async"
-              /> */}
               <span className="mobile-menu-ad-kicker">Annual deal</span>
               <strong className="mobile-menu-ad-title">Save more with the yearly plan</strong>
               <p className="mobile-menu-ad-copy">
@@ -285,38 +282,6 @@ export default function Page() {
             <h1>{t(locale, 'heroTitle2')}</h1>
 
             <p className="hero-sub">{t(locale, 'heroSub')}</p>
-
-            {/* <section className="logo-lab" aria-label="Logo variations">
-              <article className="logo-option">
-                <span className="logo-option-kicker">Logo 1</span>
-                <Cap26Logo />
-                <p>Crop frame + rec dot</p>
-              </article>
-
-              <article className="logo-option">
-                <span className="logo-option-kicker">Logo 2</span>
-                <Cap26Logo2 />
-                <p>Capture ring + camera cue</p>
-              </article>
-
-              <article className="logo-option">
-                <span className="logo-option-kicker">Logo 3</span>
-                <Cap26Logo3 />
-                <p>Single window + edit rail</p>
-              </article>
-
-              <article className="logo-option">
-                <span className="logo-option-kicker">Logo 4</span>
-                <Cap26Logo4 />
-                <p>Apple-like orb + large 26</p>
-              </article>
-
-              <article className="logo-option">
-                <span className="logo-option-kicker">Logo 5</span>
-                <Cap26Logo5 />
-                <p>Interlaced rings + hollow center</p>
-              </article>
-            </section> */}
 
             <div className="hero-actions">
               {isMac && (
@@ -402,7 +367,7 @@ export default function Page() {
               playsInline
               loop
               preload="none"
-              ref={(el) => {
+              ref={(el: HTMLVideoElement | null) => {
                 if (!el) return
 
                 const observer = new IntersectionObserver(
@@ -421,44 +386,6 @@ export default function Page() {
             />
           </div>
         </section>
-
-        {/* <section className="feature-section">
-          <div className="wrap feature-content">
-            <span className="section-label">{t(locale, 'sectionEditorLabel')}</span>
-            <h2>{t(locale, 'sectionEditorTitle')}</h2>
-            <p className="section-sub">{t(locale, 'sectionEditorSub')}</p>
-          </div>
-          <div className="wrap feature-image-wrap">
-            <div className="feature-glow" aria-hidden="true" />
-            <img
-              className="feature-image"
-              src="/screenshot-3.png"
-              alt={t(locale, 'sectionEditorTitle')}
-              width="1280"
-              height="800"
-              loading="lazy"
-            />
-          </div>
-        </section> */}
-
-        {/* <section className="feature-section">
-          <div className="wrap feature-content">
-            <span className="section-label">{t(locale, 'sectionEffectsLabel')}</span>
-            <h2>{t(locale, 'sectionEffectsTitle')}</h2>
-            <p className="section-sub">{t(locale, 'sectionEffectsSub')}</p>
-          </div>
-          <div className="wrap feature-image-wrap">
-            <div className="feature-glow" aria-hidden="true" />
-            <img
-              className="feature-image"
-              src="/screenshot-4.png"
-              alt={t(locale, 'sectionEffectsTitle')}
-              width="1280"
-              height="800"
-              loading="lazy"
-            />
-          </div>
-        </section> */}
 
         <section className="feature-section">
           <div className="wrap feature-content">
@@ -731,7 +658,7 @@ export default function Page() {
 
               <p>{t(locale, 'footerDesc')}</p>
 
-              <small>{t(locale, 'footerCopyright').replace('{year}', year)}</small>
+              <small>{t(locale, 'footerCopyright').replace('{year}', String(year))}</small>
             </div>
 
             <div className="footer-col">
