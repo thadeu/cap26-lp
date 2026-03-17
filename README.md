@@ -2,10 +2,6 @@
   <img src="public/brand/cap26-lockup-horizontal.svg" alt="Cap26" width="320" />
 </p>
 
-Marketing website for Cap26, a macOS screen recording studio that combines capture and editing in a single workflow.
-
-Built with Vike, React, Vite, and Tailwind CSS, and prepared for deployment to Cloudflare Pages.
-
 ## Table of Contents
 
 - [Overview](#overview)
