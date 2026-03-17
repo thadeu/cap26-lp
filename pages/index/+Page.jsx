@@ -3,7 +3,8 @@ import { Config } from 'vike-react/Config'
 import { usePageContext } from 'vike-react/usePageContext'
 import { t } from '../../i18n/index.js'
 import { ConfettiParticles } from '@/components/Confetti'
-import { Cap26Logo } from '@/components/Logo1'
+// import { Cap26Logo } from '@/components/Logo1'
+import { Cap26Logo } from '@/components/Logo2'
 
 const schema = {
   '@context': 'https://schema.org',
@@ -160,7 +161,6 @@ export default function Page() {
         <header className="header" ref={headerNavRef}>
           <div className="wrap header-inner">
             <a className="logo" href={locale === 'pt-BR' ? '/pt-br' : '/'} aria-label="Cap26 home">
-              {/* <span className="logo-text logo-glow">Cap26</span> */}
               <div className="h-9.5 overflow-clip">
                 <Cap26Logo />
               </div>

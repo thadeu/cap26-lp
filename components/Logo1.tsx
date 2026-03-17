@@ -24,29 +24,26 @@ export function Cap26Logo() {
             <stop offset="0" stopColor="#FDFEFF" />
             <stop offset="1" stopColor="#CFE2FF" />
           </linearGradient>
-          <linearGradient id="cap26-sheen" x1="19" y1="11" x2="44" y2="29" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="rgba(255,255,255,0.62)" />
-            <stop offset="1" stopColor="rgba(255,255,255,0)" />
-          </linearGradient>
         </defs>
 
         <rect x="4" y="4" width="56" height="56" rx="17" fill="url(#cap26-bg)" />
         <rect x="4.5" y="4.5" width="55" height="55" rx="16.5" stroke="rgba(255,255,255,0.16)" />
 
-        <path
-          d="M15 21.5C15 18.4624 17.4624 16 20.5 16H34C35.1046 16 36 16.8954 36 18V22C36 23.1046 35.1046 24 34 24H23.5C22.1193 24 21 25.1193 21 26.5V37.5C21 38.8807 22.1193 40 23.5 40H34C35.1046 40 36 40.8954 36 42V46C36 47.1046 35.1046 48 34 48H20.5C17.4624 48 15 45.5376 15 42.5V21.5Z"
-          fill="url(#cap26-back)"
-        />
-        <path
-          d="M28 21.5C28 18.4624 30.4624 16 33.5 16H43.5C46.5376 16 49 18.4624 49 21.5V42.5C49 45.5376 46.5376 48 43.5 48H33.5C30.4624 48 28 45.5376 28 42.5V38.5C28 37.1193 26.8807 36 25.5 36H23C21.8954 36 21 35.1046 21 34V30C21 28.8954 21.8954 28 23 28H25.5C26.8807 28 28 26.8807 28 25.5V21.5Z"
-          fill="url(#cap26-front)"
-        />
-        <path
-          d="M13 11C22.5 11 30.5 13.2 37.5 18.5"
-          stroke="url(#cap26-sheen)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
+        <rect x="14" y="16" width="36" height="30" rx="8" fill="url(#cap26-back)" />
+        <rect x="14.5" y="16.5" width="35" height="29" rx="7.5" stroke="rgba(255,255,255,0.24)" strokeWidth="1" />
+        <path d="M19 23H45" stroke="rgba(7,23,47,0.18)" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="20.5" cy="20" r="1.15" fill="rgba(7,23,47,0.26)" />
+        <circle cx="24" cy="20" r="1.15" fill="rgba(7,23,47,0.16)" />
+
+        <rect x="18" y="27" width="28" height="12" rx="3.5" fill="rgba(11,36,70,0.84)" />
+        <path d="M22 29.5V32.5H19.5" stroke="#EAF2FF" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M42 29.5V32.5H44.5" stroke="#EAF2FF" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M22 36.5V33.5H19.5" stroke="#EAF2FF" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M42 36.5V33.5H44.5" stroke="#EAF2FF" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+
+        <rect x="20" y="41.5" width="22" height="3.2" rx="1.6" fill="rgba(11,36,70,0.24)" />
+        <rect x="21.5" y="42.3" width="9.5" height="1.6" rx="0.8" fill="rgba(255,255,255,0.78)" />
+        <rect x="32" y="41.4" width="1.8" height="3.4" rx="0.9" fill="#CFE2FF" />
         <circle cx="46" cy="46" r="3.5" fill="#FF6B57" />
         <circle cx="46" cy="46" r="6.5" stroke="rgba(255,107,87,0.28)" />
       </svg>
