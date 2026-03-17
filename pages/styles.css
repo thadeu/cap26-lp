@@ -1026,7 +1026,7 @@ h1 {
 
   .logo-lab {
     grid-template-columns: 1fr;
-    width: min(100%, 420px);
+    width: min(100%, 620px);
   }
 
   .feature-section {

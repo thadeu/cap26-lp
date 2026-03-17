@@ -1,11 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cap26 favicon">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Cap26 Favicon</title>
+  <desc>Cap26 favicon optimized for small browser tab sizes with transparent background.</desc>
+
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7d7aff" />
-      <stop offset="100%" stop-color="#ff8c69" />
+    <linearGradient id="ring" x1="7" y1="5" x2="57" y2="57" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFE3A3" />
+      <stop offset="0.38" stop-color="#D89B57" />
+      <stop offset="0.72" stop-color="#8B6CFF" />
+      <stop offset="1" stop-color="#6B53C7" />
     </linearGradient>
+    
+    <linearGradient id="ringTop" x1="24" y1="18" x2="34" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="rgba(255,242,214,0.82)" />
+      <stop offset="1" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+
+    <linearGradient id="ringBottom" x1="28" y1="28" x2="42" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="rgba(62,32,12,0)" />
+      <stop offset="0.58" stop-color="rgba(72,44,28,0.28)" />
+      <stop offset="1" stop-color="rgba(72,56,128,0.72)" />
+    </linearGradient>
+
+    <radialGradient id="hole" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(32 32.8) rotate(90) scale(16.1 15.2)">
+      <stop offset="0" stop-color="#02060D" />
+      <stop offset="0.78" stop-color="#07111D" />
+      <stop offset="1" stop-color="#251A42" />
+    </radialGradient>
   </defs>
-  <rect width="64" height="64" rx="18" fill="#080d1f" />
-  <path d="M19 20.5c0-3.59 2.91-6.5 6.5-6.5h12c4.42 0 8 3.58 8 8 0 2.39-1.05 4.54-2.72 6.01A10.48 10.48 0 0 1 48 37c0 7.18-5.82 13-13 13H18.5c-1.93 0-3.5-1.57-3.5-3.5S16.57 43 18.5 43H35c3.31 0 6-2.69 6-6s-2.69-6-6-6H25.5C21.91 31 19 28.09 19 24.5v-4Z" fill="url(#g)" />
-  <circle cx="42" cy="22" r="4" fill="#6ff7b0" />
+
+  <circle cx="32" cy="32" r="23.2" stroke="url(#ring)" stroke-width="17.8" />
+  <circle cx="32" cy="32" r="23.4" stroke="url(#ringTop)" stroke-width="3.9" stroke-dasharray="33 114" stroke-linecap="round" transform="rotate(-126 32 32)" />
+  <circle cx="32" cy="32" r="23.4" stroke="url(#ringBottom)" stroke-width="5.1" stroke-dasharray="46 101" stroke-linecap="round" transform="rotate(36 32 32)" />
+
+  <path d="M14.4 15.9C18.7 11.9 24.5 9.8 30.8 10.1" stroke="rgba(255,238,205,0.28)" stroke-width="3.1" stroke-linecap="round" />
+  <path d="M18.1 53C22.2 55.8 27 57.2 32.2 56.8C37.3 56.5 41.9 54.7 45.6 51.5" stroke="rgba(121,98,201,0.42)" stroke-width="4.2" stroke-linecap="round" />
+  <path d="M12.4 31.9C12.4 21.93 20.42 13.84 30.39 13.74C40.79 13.64 49.05 21.9 48.94 32.3C48.84 42.52 40.61 50.75 30.39 50.75C20.61 50.75 12.68 42.82 12.68 33.04V31.9Z" fill="url(#hole)" />
 </svg>

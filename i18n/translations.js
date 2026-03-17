@@ -86,7 +86,7 @@ const translations = {
 
     // CTA
     ctaTitle: 'Pronto para gravar?',
-    ctaSub: 'Baixe Cap26 gratuitamente e comece a criar vídeos incríveis.',
+    ctaSub: 'Baixe gratuitamente e comece a criar vídeos incríveis.',
 
     // Footer
     footerDesc: 'Screen recording studio para macOS.',
@@ -197,7 +197,7 @@ const translations = {
 
     // CTA
     ctaTitle: 'Ready to record?',
-    ctaSub: 'Download Cap26 for free and start creating stunning videos.',
+    ctaSub: 'Download app for free and start creating stunning videos.',
 
     // Footer
     footerDesc: 'Screen recording studio for macOS.',

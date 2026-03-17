@@ -10,8 +10,8 @@ export function Cap26Logo5() {
   return (
     <span className="inline-flex items-center gap-1 text-white">
       <svg
-        width="40"
-        height="40"
+        width="60"
+        height="60"
         viewBox="0 0 64 64"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@ export function Cap26Logo5() {
       </svg>
 
       <span className="flex flex-col justify-center leading-none">
-        <span className="relative flex items-start font-semibold tracking-[-0.03em] text-[1.35rem] -top-[2.5px]">
+        <span className="relative flex items-start font-semibold tracking-[-0.03em] text-[2rem] -top-[2.5px]">
           <span className="text-white">cap</span>
           <sup className="relative top-[7px] left-1 text-[0.55em] text-white/72">26</sup>
         </span>
