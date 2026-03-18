@@ -203,7 +203,7 @@ const translations = {
 
     // Footer
     footerDesc: 'Screen recording studio for macOS.',
-    footerCopyright: '© {year} Ccp26. All rights reserved.',
+    footerCopyright: '© {year} cap26. All rights reserved.',
     footerProduct: 'Product',
     footerDownload: 'Download',
     footerContact: 'Contact',

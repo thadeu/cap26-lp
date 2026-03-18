@@ -1281,19 +1281,20 @@ h1 {
 }
 
 .cookie-banner {
-  left: 24px;
-  right: 24px;
-  bottom: 0px;
+  left: auto;
+  right: 20px;
+  width: min(560px, calc(100vw - 48px));
+  bottom: 20px;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 20px 22px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 18px 20px;
   border-radius: 22px;
 }
 
 .cookie-banner-copy {
-  max-width: 66ch;
+  max-width: none;
 }
 
 .cookie-banner-kicker,
@@ -1330,6 +1331,11 @@ h1 {
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.cookie-banner-actions {
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .cookie-banner-primary,
@@ -1402,7 +1408,7 @@ h1 {
 }
 
 .location-prompt.has-cookie-banner {
-  bottom: 126px;
+  bottom: 198px;
 }
 
 .location-prompt-error {

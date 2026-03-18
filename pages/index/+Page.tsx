@@ -114,9 +114,7 @@ export default function Page() {
 
     const consent = getCookie(COOKIE_CONSENT_COOKIE)
 
-    const isLocalDevelopment = ['localhost', '127.0.0.1'].includes(window.location.hostname)
-
-    if (!isLocalDevelopment && (consent === 'accepted' || consent === 'rejected')) {
+    if (consent === 'accepted' || consent === 'rejected') {
       setShowCookieBanner(false)
     }
 
@@ -235,10 +233,6 @@ export default function Page() {
   const handleCookieChoice = (value: 'accepted' | 'rejected') => {
     setShowCookieBanner(false)
     setCookie(COOKIE_CONSENT_COOKIE, value)
-  }
-
-  const reopenCookieBanner = () => {
-    setShowCookieBanner(true)
   }
 
   const closeLocationPrompt = () => {
@@ -848,7 +842,7 @@ export default function Page() {
         </footer>
 
         {showLocationPrompt && (
-          <aside className={`location-prompt ${showCookieBanner ? 'has-cookie-banner' : ''}`} aria-live="polite">
+          <div className={`location-prompt ${showCookieBanner ? 'has-cookie-banner' : ''}`} aria-live="polite">
             <p className="location-prompt-kicker">Locale</p>
             <h3>{localeUi.locationTitle}</h3>
             <p>{localeUi.locationBody}</p>
@@ -868,11 +862,11 @@ export default function Page() {
                 {localeUi.locationLater}
               </button>
             </div>
-          </aside>
+          </div>
         )}
 
         {showCookieBanner && (
-          <aside className="cookie-banner" aria-live="polite">
+          <div className="cookie-banner" aria-live="polite">
             <div className="cookie-banner-copy">
               <p className="cookie-banner-kicker">Cookies</p>
               <h3>{localeUi.cookieTitle}</h3>
@@ -890,7 +884,7 @@ export default function Page() {
                 {localeUi.cookieAccept}
               </button>
             </div>
-          </aside>
+          </div>
         )}
       </div>
     </>
