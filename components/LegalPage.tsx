@@ -1,6 +1,7 @@
 import { Config } from 'vike-react/Config'
 
 import { Link } from '@/components/Link'
+import { PwaHead } from '@/components/PwaHead'
 import type { Locale } from '@/i18n'
 
 type LegalSection = {
@@ -34,13 +35,13 @@ type LegalPageProps = {
 export function LegalPage({ locale, currentPage, copy }: LegalPageProps) {
   return (
     <>
-      <Config title={copy.metaTitle} description={copy.metaDescription} image="/og-cap26.svg" />
+      <Config title={copy.metaTitle} description={copy.metaDescription} image="/og-cap26.svg" Head={<PwaHead />} />
 
       <main className="legal-page">
         <div className="wrap legal-shell">
           <header className="legal-topbar">
             <Link href="/" className="legal-home-link" locale={locale}>
-              <img src="/brand/cap26-lockup-horizontal-white.svg" alt="Cap26" width="170" />
+              <img src="/b/cap26-lockup-horizontal-white.svg" alt="Cap26" width="170" />
               <span>{copy.homeLabel}</span>
             </Link>
 

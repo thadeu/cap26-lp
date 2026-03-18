@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/brand/cap26-lockup-horizontal.svg" alt="Cap26" width="320" />
+  <img src="public/b/cap26-lockup-horizontal.svg" alt="Cap26" width="320" />
 </p>
 
 ## Table of Contents
@@ -101,7 +101,7 @@ This command builds the site and deploys `dist/client` to the `cap26-lp` Cloudfl
 
 ## Brand Assets
 
-Brand SVG files are available in `public/brand/`.
+Brand SVG files are available in `public/b/`.
 
 - `cap26-lockup-horizontal.svg`
 - `cap26-lockup-vertical.svg`

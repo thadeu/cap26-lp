@@ -4,6 +4,7 @@ import { usePageContext } from 'vike-react/usePageContext'
 import { t } from '@/i18n'
 import { ConfettiParticles } from '@/components/Confetti'
 import { Link } from '@/components/Link'
+import { PwaHead } from '@/components/PwaHead'
 
 type UserAgentData = {
   getHighEntropyValues: (values: string[]) => Promise<{ platform?: string }>
@@ -305,11 +306,9 @@ export default function Page() {
             <meta name="robots" content="index,follow" />
             <meta name="theme-color" content="#0d0d12" />
             <meta name="theme-color" content="#0d0d12" media="(prefers-color-scheme: dark)" />
-            <meta name="mobile-web-app-capable" content="yes" />
-            <meta name="apple-mobile-web-app-capable" content="yes" />
-            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-            <meta name="apple-mobile-web-app-title" content="Cap26" />
             <meta name="format-detection" content="telephone=no" />
+
+            <PwaHead />
 
             <meta property="og:type" content="website" />
             <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'pt_BR'} />
@@ -333,7 +332,7 @@ export default function Page() {
           <div className="wrap header-inner">
             <a className="logo" href={locale === 'pt-BR' ? '/pt-br' : '/'} aria-label="Cap26 home">
               <div className="min-h-auto relative top-2">
-                <img src="/brand/cap26-lockup-horizontal.svg" width="180px" className="logo-header" />
+                <img src="/b/cap26-lockup-horizontal.svg" width="180px" className="logo-header" />
               </div>
             </a>
 
@@ -807,7 +806,7 @@ export default function Page() {
             <div className="footer-brand">
               <div className="footer-logo">
                 <span className="logo-text">
-                  <img src="/brand/cap26-lockup-horizontal-white.svg" width="200px" />
+                  <img src="/b/cap26-lockup-horizontal-white.svg" width="200px" />
                 </span>
               </div>
 
