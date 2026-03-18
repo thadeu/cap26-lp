@@ -51,6 +51,8 @@ const schema = {
   },
 }
 
+const checkoutUrl = (plan: 'monthly' | 'yearly') => `https://cloud.cap26.app/s/checkout?plan=${plan}`
+
 export default function Page() {
   const pageContext = usePageContext()
   const locale = 'locale' in pageContext && typeof pageContext.locale === 'string' ? pageContext.locale : 'en'
@@ -74,6 +76,7 @@ export default function Page() {
           locationError:
             'Não conseguimos acessar sua localização. Você pode continuar no default ou permitir a localização no navegador.',
           privacyLink: 'Política de Privacidade',
+          stripeBadgeAlt: 'Pagamentos processados com Stripe',
         }
       : {
           cookieTitle: 'Cookies on Cap26',
@@ -92,6 +95,7 @@ export default function Page() {
           locationError:
             'We could not access your location. You can continue on the default version or allow location in your browser.',
           privacyLink: 'Privacy Policy',
+          stripeBadgeAlt: 'Payments processed with Stripe',
         }
 
   const [isMac, setIsMac] = useState(false)
@@ -349,6 +353,8 @@ export default function Page() {
                 </svg>
                 <span className="pl-2">Github</span>
               </a>
+
+              <a href="#pricing">Pricing</a>
 
               <a href="mailto:support@cap26.app">Contact</a>
             </nav>
@@ -611,9 +617,14 @@ export default function Page() {
 
                 <p className="pricing-note">{t(locale, 'pricingMonthlyNote')}</p>
 
-                <a className="pricing-btn" href="#download">
+                <a className="pricing-btn" href={checkoutUrl('monthly')}>
                   {t(locale, 'pricingCta')}
                 </a>
+
+                <div className="pricing-checkout-meta">
+                  <p className="pricing-checkout-note">{t(locale, 'pricingSecureCheckout')}</p>
+                  <p className="pricing-checkout-subnote">{t(locale, 'pricingTaxNote')}</p>
+                </div>
 
                 <ul className="pricing-features">
                   <li>
@@ -677,9 +688,14 @@ export default function Page() {
                 </div>
 
                 <p className="pricing-note">{t(locale, 'pricingYearlyNote')}</p>
-                <a className="pricing-btn pricing-btn--accent" href="#download">
+                <a className="pricing-btn pricing-btn--accent" href={checkoutUrl('yearly')}>
                   {t(locale, 'pricingCta')}
                 </a>
+
+                <div className="pricing-checkout-meta">
+                  <p className="pricing-checkout-note">{t(locale, 'pricingSecureCheckout')}</p>
+                  <p className="pricing-checkout-subnote">{t(locale, 'pricingTaxNote')}</p>
+                </div>
 
                 <ul className="pricing-features">
                   <li>

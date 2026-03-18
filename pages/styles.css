@@ -984,7 +984,7 @@ h1 {
   transition:
     border-color 150ms ease,
     color 150ms ease;
-  margin-bottom: 28px;
+  margin-bottom: 12px;
 }
 
 .pricing-btn:hover {
@@ -1002,6 +1002,26 @@ h1 {
   background: var(--accent-hover);
   border-color: transparent;
   color: #0d0d12;
+}
+
+.pricing-checkout-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 28px;
+}
+
+.pricing-checkout-note {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.pricing-checkout-subnote {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+  opacity: 0.82;
 }
 
 .pricing-features {
@@ -1227,6 +1247,18 @@ h1 {
 .footer-brand small {
   color: var(--text-muted);
   font-size: 0.75rem;
+}
+
+.footer-payment {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.footer-payment-logo {
+  width: 132px;
+  height: auto;
+  opacity: 0.92;
 }
 
 .footer-col h4 {

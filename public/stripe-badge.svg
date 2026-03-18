@@ -1,0 +1,5 @@
+<svg width="132" height="32" viewBox="0 0 132 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0.5" y="0.5" width="131" height="31" rx="16" fill="#17171F" stroke="rgba(255,255,255,0.10)"/>
+  <text x="16" y="13" fill="#8B8B9E" font-family="Inter, system-ui, sans-serif" font-size="8" font-weight="600" letter-spacing="0.08em">POWERED BY</text>
+  <text x="16" y="23" fill="#635BFF" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700">stripe</text>
+</svg>

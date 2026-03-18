@@ -1,6 +1,6 @@
 import { localeDefault, type Locale } from './locales'
 
-const translations = {
+const translations: Record<Locale, Record<string, string>> = {
   'pt-BR': {
     // Nav
     navDownload: 'Download para macOS',
@@ -64,6 +64,8 @@ const translations = {
     pricingYearlyPeriod: '/ mês',
     pricingYearlyNote: 'Cobrado anualmente.',
     pricingCta: 'Começar',
+    pricingSecureCheckout: 'Checkout seguro via Stripe',
+    pricingTaxNote: 'VAT/impostos podem ser aplicados.',
     pricingFeature1: 'Todos os recursos',
     pricingFeature2: 'Links compartilháveis',
     pricingFeature3: '3 dispositivos macOS pessoais',
@@ -175,9 +177,11 @@ const translations = {
     pricingYearlyPeriod: '/ month',
     pricingYearlyNote: 'Per month billed yearly.',
     pricingCta: 'Get Started',
+    pricingSecureCheckout: 'Secure checkout via Stripe',
+    pricingTaxNote: 'VAT/taxes may apply.',
     pricingFeature1: 'All features',
     pricingFeature2: 'Shareable links',
-    pricingFeature3: '3 personal macOS devices',
+    pricingFeature3: '1 personal macOS devices',
 
     // FAQ
     faqTitle: 'Questions & Answers',
@@ -220,7 +224,7 @@ const translations = {
     twitterDescription: 'One studio. All your recordings. Built for macOS.',
     imgAlt: 'Cap26 app — screen recording studio interface',
   },
-} satisfies Record<Locale, Record<string, string>>
+}
 
 export function t(locale: string, key: string): string {
   const normalizedLocale = locale in translations ? (locale as Locale) : localeDefault
