@@ -5,7 +5,7 @@ export default {
   Layout,
   extends: vikeReact,
   prerender: true,
-  title: 'Cap26 for macOS',
+  title: 'Cap26 Studio',
   description:
     'Screen recording studio for macOS. Unify recording and editing in a single experience. Built for creators, product teams, and people painfully disorganized with videos.',
   image: '/favicon.svg',

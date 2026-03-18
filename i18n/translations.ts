@@ -103,7 +103,7 @@ const translations = {
     footerTerms: 'Termos',
 
     // SEO
-    seoTitle: 'Cap26 for macOS | Screen Recording com editor completo',
+    seoTitle: 'Cap26 Studio | Screen Recording com editor completo',
     seoDescription:
       'Cap26, o screen recording studio para macOS: editor completo, cortes, efeitos, microfone, webcam, video, legendas e background em um fluxo unificado.',
     twitterDescription: 'One studio. All your recordings. Feito para macOS.',
@@ -214,7 +214,7 @@ const translations = {
     footerTerms: 'Terms',
 
     // SEO
-    seoTitle: 'Cap26 for macOS | Screen Recording with full editor',
+    seoTitle: 'Cap26 Studio | Screen Recording with full editor',
     seoDescription:
       'Cap26, the screen recording studio for macOS: full editor, cuts, effects, mic, webcam, video, captions and backgrounds in a unified workflow.',
     twitterDescription: 'One studio. All your recordings. Built for macOS.',

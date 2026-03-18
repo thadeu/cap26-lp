@@ -315,7 +315,7 @@ export default function Page() {
             <meta property="og:site_name" content="Cap26" />
 
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Cap26 for macOS" />
+            <meta name="twitter:title" content="Cap26 Studio" />
             <meta name="twitter:description" content={t(locale, 'twitterDescription')} />
 
             <link rel="alternate" hrefLang="en" href="https://cap26.app/" />

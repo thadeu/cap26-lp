@@ -72,7 +72,7 @@ html {
   -webkit-text-size-adjust: 100%;
 
   overflow-x: hidden;
-  zoom: 1.19;
+  zoom: 1;
 
   @media (max-width: 1024px) {
     zoom: 1;
