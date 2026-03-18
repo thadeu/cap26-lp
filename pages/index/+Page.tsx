@@ -13,6 +13,28 @@ type NavigatorWithUserAgentData = Navigator & {
   userAgentData?: UserAgentData
 }
 
+const COOKIE_CONSENT_COOKIE = 'cap26_cookie_consent'
+const LOCALE_PREFERENCE_KEY = 'cap26_locale_preference'
+const GEO_PROMPT_DISMISSED_KEY = 'cap26_geo_prompt_dismissed'
+
+function getCookie(name: string): string | null {
+  if (typeof document === 'undefined') return null
+
+  const entry = document.cookie.split('; ').find((item) => item.startsWith(`${name}=`))
+
+  return entry ? decodeURIComponent(entry.split('=').slice(1).join('=')) : null
+}
+
+function setCookie(name: string, value: string) {
+  if (typeof document === 'undefined') return
+
+  document.cookie = `${name}=${encodeURIComponent(value)}; path=/; max-age=31536000; SameSite=Lax`
+}
+
+function isLikelyBrazil(latitude: number, longitude: number): boolean {
+  return latitude <= 5.3 && latitude >= -33.9 && longitude >= -73.99 && longitude <= -34.79
+}
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -32,9 +54,51 @@ export default function Page() {
   const pageContext = usePageContext()
   const locale = 'locale' in pageContext && typeof pageContext.locale === 'string' ? pageContext.locale : 'en'
   const year = new Date().getFullYear()
+  const localeUi =
+    locale === 'pt-BR'
+      ? {
+          cookieTitle: 'Cookies no Cap26',
+          cookieBody:
+            'Usamos cookies e armazenamento local para lembrar preferências essenciais do site e melhorar a experiência. Você pode aceitar ou rejeitar cookies não essenciais.',
+          cookieAccept: 'Aceitar',
+          cookieReject: 'Rejeitar',
+          cookieManage: 'Configurar cookies',
+          locationTitle: 'Quer ver a versão certa automaticamente?',
+          locationBody:
+            'Podemos pedir sua localização para decidir entre pt-BR e a versão default quando você cair na home principal.',
+          locationAllow: 'Usar minha localização',
+          locationDefault: 'Continuar no default',
+          locationLater: 'Agora não',
+          locationLoading: 'Verificando localização...',
+          locationError:
+            'Não conseguimos acessar sua localização. Você pode continuar no default ou permitir a localização no navegador.',
+          privacyLink: 'Política de Privacidade',
+        }
+      : {
+          cookieTitle: 'Cookies on Cap26',
+          cookieBody:
+            'We use cookies and local storage to remember essential site preferences and improve the experience. You can accept or reject non-essential cookies.',
+          cookieAccept: 'Accept',
+          cookieReject: 'Reject',
+          cookieManage: 'Cookie settings',
+          locationTitle: 'Want the right locale automatically?',
+          locationBody:
+            'We can ask for your location to decide between pt-BR and the default version when you land on the main home page.',
+          locationAllow: 'Use my location',
+          locationDefault: 'Continue on default',
+          locationLater: 'Not now',
+          locationLoading: 'Checking location...',
+          locationError:
+            'We could not access your location. You can continue on the default version or allow location in your browser.',
+          privacyLink: 'Privacy Policy',
+        }
 
   const [isMac, setIsMac] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [showCookieBanner, setShowCookieBanner] = useState(true)
+  const [showLocationPrompt, setShowLocationPrompt] = useState(false)
+  const [isLocatingUser, setIsLocatingUser] = useState(false)
+  const [locationError, setLocationError] = useState<string | null>(null)
 
   useEffect(() => {
     const uad = (navigator as NavigatorWithUserAgentData).userAgentData
@@ -42,6 +106,35 @@ export default function Page() {
       uad.getHighEntropyValues(['platform']).then((v) => setIsMac(v.platform === 'macOS'))
     } else {
       setIsMac(navigator.userAgent.includes('Macintosh'))
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const consent = getCookie(COOKIE_CONSENT_COOKIE)
+
+    const isLocalDevelopment = ['localhost', '127.0.0.1'].includes(window.location.hostname)
+
+    if (!isLocalDevelopment && (consent === 'accepted' || consent === 'rejected')) {
+      setShowCookieBanner(false)
+    }
+
+    const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
+    const savedLocale = window.localStorage.getItem(LOCALE_PREFERENCE_KEY)
+    const dismissedPrompt = window.localStorage.getItem(GEO_PROMPT_DISMISSED_KEY) === '1'
+
+    if (pathname === '/' && savedLocale === 'pt-BR') {
+      window.location.replace('/pt-br')
+      return
+    }
+
+    if (pathname === '/' && !savedLocale && !dismissedPrompt) {
+      setShowLocationPrompt(true)
+    }
+
+    if (pathname.startsWith('/pt-br')) {
+      window.localStorage.setItem(LOCALE_PREFERENCE_KEY, 'pt-BR')
     }
   }, [])
 
@@ -138,6 +231,73 @@ export default function Page() {
       videoObserver.disconnect()
     }
   }, [])
+
+  const handleCookieChoice = (value: 'accepted' | 'rejected') => {
+    setShowCookieBanner(false)
+    setCookie(COOKIE_CONSENT_COOKIE, value)
+  }
+
+  const reopenCookieBanner = () => {
+    setShowCookieBanner(true)
+  }
+
+  const closeLocationPrompt = () => {
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(GEO_PROMPT_DISMISSED_KEY, '1')
+    }
+
+    setShowLocationPrompt(false)
+    setLocationError(null)
+    setIsLocatingUser(false)
+  }
+
+  const keepDefaultLocale = () => {
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(LOCALE_PREFERENCE_KEY, 'en')
+      window.localStorage.setItem(GEO_PROMPT_DISMISSED_KEY, '1')
+    }
+
+    setShowLocationPrompt(false)
+    setLocationError(null)
+  }
+
+  const handleLocationPrompt = () => {
+    if (typeof window === 'undefined') return
+
+    if (!navigator.geolocation) {
+      setLocationError(localeUi.locationError)
+      return
+    }
+
+    setIsLocatingUser(true)
+    setLocationError(null)
+
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        const detectedLocale = isLikelyBrazil(coords.latitude, coords.longitude) ? 'pt-BR' : 'en'
+
+        window.localStorage.setItem(LOCALE_PREFERENCE_KEY, detectedLocale)
+        window.localStorage.setItem(GEO_PROMPT_DISMISSED_KEY, '1')
+
+        if (detectedLocale === 'pt-BR') {
+          window.location.replace('/pt-br')
+          return
+        }
+
+        setIsLocatingUser(false)
+        setShowLocationPrompt(false)
+      },
+      () => {
+        setIsLocatingUser(false)
+        setLocationError(localeUi.locationError)
+      },
+      {
+        enableHighAccuracy: false,
+        timeout: 10000,
+        maximumAge: 86400000,
+      },
+    )
+  }
 
   return (
     <>
@@ -686,6 +846,52 @@ export default function Page() {
             </div>
           </div>
         </footer>
+
+        {showLocationPrompt && (
+          <aside className={`location-prompt ${showCookieBanner ? 'has-cookie-banner' : ''}`} aria-live="polite">
+            <p className="location-prompt-kicker">Locale</p>
+            <h3>{localeUi.locationTitle}</h3>
+            <p>{localeUi.locationBody}</p>
+
+            {locationError && <p className="location-prompt-error">{locationError}</p>}
+
+            <div className="location-prompt-actions">
+              <button type="button" className="location-prompt-primary" onClick={handleLocationPrompt}>
+                {isLocatingUser ? localeUi.locationLoading : localeUi.locationAllow}
+              </button>
+
+              <button type="button" className="location-prompt-secondary" onClick={keepDefaultLocale}>
+                {localeUi.locationDefault}
+              </button>
+
+              <button type="button" className="location-prompt-link" onClick={closeLocationPrompt}>
+                {localeUi.locationLater}
+              </button>
+            </div>
+          </aside>
+        )}
+
+        {showCookieBanner && (
+          <aside className="cookie-banner" aria-live="polite">
+            <div className="cookie-banner-copy">
+              <p className="cookie-banner-kicker">Cookies</p>
+              <h3>{localeUi.cookieTitle}</h3>
+              <p>
+                {localeUi.cookieBody} <Link href="/privacy">{localeUi.privacyLink}</Link>
+              </p>
+            </div>
+
+            <div className="cookie-banner-actions">
+              <button type="button" className="cookie-banner-secondary" onClick={() => handleCookieChoice('rejected')}>
+                {localeUi.cookieReject}
+              </button>
+
+              <button type="button" className="cookie-banner-primary" onClick={() => handleCookieChoice('accepted')}>
+                {localeUi.cookieAccept}
+              </button>
+            </div>
+          </aside>
+        )}
       </div>
     </>
   )
