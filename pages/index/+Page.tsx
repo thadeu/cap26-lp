@@ -179,7 +179,7 @@ export default function Page() {
           <div className="wrap header-inner">
             <a className="logo" href={locale === 'pt-BR' ? '/pt-br' : '/'} aria-label="Cap26 home">
               <div className="min-h-auto relative top-2">
-                <img src="brand/cap26-lockup-horizontal.svg" width="180px" className="logo-header" />
+                <img src="/brand/cap26-lockup-horizontal.svg" width="180px" className="logo-header" />
               </div>
             </a>
 
