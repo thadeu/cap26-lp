@@ -3,6 +3,7 @@ import { Config } from 'vike-react/Config'
 import { usePageContext } from 'vike-react/usePageContext'
 import { t } from '@/i18n'
 import { ConfettiParticles } from '@/components/Confetti'
+import { Link } from '@/components/Link'
 
 type UserAgentData = {
   getHighEntropyValues: (values: string[]) => Promise<{ platform?: string }>
@@ -196,7 +197,7 @@ export default function Page() {
                 <span className="pl-2">Github</span>
               </a>
 
-              <a href="mailto:say@cap26.app">Contact</a>
+              <a href="mailto:support@cap26.app">Contact</a>
             </nav>
 
             <button
@@ -248,7 +249,7 @@ export default function Page() {
                 <span className="mobile-menu-link-subtitle">our opensource repository</span>
               </span>
             </a>
-            <a href="mailto:say@cap26.app" onClick={() => setIsMobileMenuOpen(false)}>
+            <a href="mailto:support@cap26.app" onClick={() => setIsMobileMenuOpen(false)}>
               <span className="mobile-menu-link-copy">
                 <span className="mobile-menu-link-title">Contact</span>
                 <span className="mobile-menu-link-subtitle">send us a message to talk more</span>
@@ -665,7 +666,7 @@ export default function Page() {
               <h4>{t(locale, 'footerProduct')}</h4>
 
               <a href="#download">{t(locale, 'footerDownload')}</a>
-              <a href="mailto:say@cap26.app">{t(locale, 'footerContact')}</a>
+              <a href="mailto:support@cap26.app">{t(locale, 'footerContact')}</a>
             </div>
 
             <div className="footer-col">
@@ -679,9 +680,9 @@ export default function Page() {
             <div className="footer-col">
               <h4>{t(locale, 'footerLegal')}</h4>
 
-              <a href="/privacy">{t(locale, 'footerPrivacy')}</a>
+              <Link href="/privacy">{t(locale, 'footerPrivacy')}</Link>
 
-              <a href="/terms">{t(locale, 'footerTerms')}</a>
+              <Link href="/terms">{t(locale, 'footerTerms')}</Link>
             </div>
           </div>
         </footer>
