@@ -303,7 +303,7 @@ export default function Page() {
       <Config
         title={t(locale, 'seoTitle')}
         description={t(locale, 'seoDescription')}
-        image="/og-cap26.svg"
+        image="https://cap26.app/lp-1.png"
         Head={
           <>
             <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -315,12 +315,17 @@ export default function Page() {
             <PwaHead />
 
             <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://cap26.app/" />
             <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'pt_BR'} />
             <meta property="og:site_name" content="Cap26" />
+            <meta property="og:image:width" content="3408" />
+            <meta property="og:image:height" content="2122" />
+            <meta property="og:image:type" content="image/png" />
 
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Cap26 Studio" />
+            <meta name="twitter:title" content={t(locale, 'seoTitle')} />
             <meta name="twitter:description" content={t(locale, 'twitterDescription')} />
+            <meta name="twitter:image" content="https://cap26.app/lp-1.png" />
 
             <link rel="alternate" hrefLang="en" href="https://cap26.app/" />
             <link rel="alternate" hrefLang="pt-BR" href="https://cap26.app/pt-br" />

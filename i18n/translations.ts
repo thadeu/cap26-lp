@@ -108,7 +108,7 @@ const translations: Record<Locale, Record<string, string>> = {
     seoTitle: 'Cap26 Studio | Screen Recording com editor completo',
     seoDescription:
       'Cap26, o screen recording studio para macOS: editor completo, cortes, efeitos, microfone, webcam, video, legendas e background em um fluxo unificado.',
-    twitterDescription: 'One studio. All your recordings. Feito para macOS.',
+    twitterDescription: 'One studio. All your recordings..',
     imgAlt: 'Cap26 app — interface do screen recording studio',
 
     pricingTitle: 'Preços',

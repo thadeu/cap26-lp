@@ -35,7 +35,12 @@ type LegalPageProps = {
 export function LegalPage({ locale, currentPage, copy }: LegalPageProps) {
   return (
     <>
-      <Config title={copy.metaTitle} description={copy.metaDescription} image="/og-cap26.svg" Head={<PwaHead />} />
+      <Config
+        title={copy.metaTitle}
+        description={copy.metaDescription}
+        image="https://cap26.app/lp-1.png"
+        Head={<PwaHead />}
+      />
 
       <main className="legal-page">
         <div className="wrap legal-shell">
